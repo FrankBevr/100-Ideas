@@ -1,7 +1,7 @@
 # 02-Ideas
-- [Youtube]()
-- [PDF]()
-- [Code]()
+- [Youtube](https://youtu.be/P_xxstTo5zY)
+- [PDF](https://github.com/FrankBevr/100-Ideas/blob/main/practice/02/02-Ideas.pdf)
+- [Code](https://github.com/FrankBevr/100-Ideas/blob/main/practice/02/researcho/lib.rs)
 
 <hr style="page-break-after:always;"/>
 
