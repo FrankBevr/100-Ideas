@@ -1,84 +1,96 @@
 # 01-Ideas
+- [Youtube - Layout](https://youtu.be/tnILeOa_dto)
+- [Youtube - Think & Sketch](https://youtu.be/AAIJumqYtns)
+- [Youtube - Paint](https://youtu.be/iWwVZAEXyZM)
+- [Github - PDF](https://github.com/FrankBevr/100-Ideas/blob/main/practice/01/01-Ideas.pdf)
+- [Github - Code](https://github.com/FrankBevr/100-Ideas/blob/main/practice/01/state_creator_04/lib.rs)
 
-- [24min- 01-Ideas Layout](https://youtu.be/tnILeOa_dto)
-- [69min - 01-Ideas | Think & Sketch](https://youtu.be/jTiXy0bKQ-M)
+<hr style="page-break-after: always;"/>
 
 ## Overview
-### Intro 
-:ballot_box_with_check: I'm Frank.
-### Think
-1. :ballot_box_with_check: Words 
-2. :ballot_box_with_check: Sentences 
-3. :ballot_box_with_check: Ideas
-4. :ballot_box_with_check: Rate Ideas
-5. :ballot_box_with_check: Select Ideas
-### Sketch
-6. Structure Idea (Design)
-   -  :ballot_box_with_check: Ideas (Problem/Solution)
-   -  :ballot_box_with_check: Requirments (Functional / NonFunctional)
-   -  :ballot_box_with_check: Stories
-   - :ballot_box_with_check: Diagrams
-       - :ballot_box_with_check: UseCase (What)
-       - :ballot_box_with_check:Class (Data)
-       - :ballot_box_with_check: Sequence (Behaviour)
-### Paint
-7. First Draft
-    - `cargo contract new my_new_idea`
-    - `cargo contract build`
-    - `substrate-contracts-node --dev`
-    - `cargo contract deploy`
-    - `cargo contract call`
-### Outro
-What, How, Why
+### :wave: Intro 
+- [x] I'm Frank.
+### :brain: Think
+- [x] Words 
+- [x] Sentences 
+- [x] Ideas
+- [x] Rate Ideas
+- [x] Select Idea
+### :pencil: Sketch
+- [x] Structure Idea (Design)
+   - [x] Ideas (Problem/Solution)
+   - [x] Requirments (Functional / NonFunctional)
+   - [x] Stories
+   - [x] Diagrams
+       - [x] UseCase (What)
+       - [x] Class (Data)
+       - [x] Sequence (Behaviour)
+### :art: Paint
+- [x] First Draft
+    - [x] `cargo contract new my_new_idea`
+    - [x] `cargo contract build`
+    - [x] `substrate-contracts-node --dev`
+    - [x] `cargo contract deploy`
+    - [x] `cargo contract call`
+### :wave: Outro
 
-## Think
-|Words|||||
-|:-|:-|:-|:-|:-|
-|Giraffe| Monkey| City| Tower| Iot|
-|Augumented Reality| Vision Pro| House| Chair| Female|
-|Male| Lawyer| Doctor| Laptop| Scientist|
-|Physicist| Chemist| Biologist| Germanist| Ethistics|
-|Priest| Coffee| Latte Machiato| Shoes| Poland|
-|Germany| Europe| China| Chenzhen| India|
-|State| Candada| Paint| Color| HSL|
-|Clothers| Music| Drop |Frequency| Universe|
-|Family| Children| Toys| ToyStory| Animation|
-|Weather| Sad| Shiny| Sun| Mercury|
-|Elements| Plumbbumb| Metal| Oil| Plastic|
-|Bell| Manufacturuing| Vertictes| Time| Smile|
-|Band| aShields| Car| Machines| Packaging|
-|aFirehelper| fusion| Switzerland| electron| Collider|
-|Games| Psychology| Magazain| Ocean| Animals|
-|Whale| Manga| theories| Books| Amazon|
-|Netlify| AWS| Vercel| Vim| Blender|
-|Models| Animation| Uv Mapping| Wheel| Motion Capture|
-|Terminal| Plane| Airport| Raynair| Memes| 
-|Whatsapp| Instagram| Bumble| Tinder| Facebook| 
+- [x] **What we did:** Think, Sketch, Paint  
+- [x] **How we achieved it:** Markdown, UML, ink!  
+- [x] **Why:** ?Great Ideas come from many?  
 
-Sentences
+<hr style="page-break-after: always;"/>
 
-1. Animal tracking - 5/10
-2. City Funding - 3/10
-3. Data Distrubiton - 4/10
-4. Health Safe - 6/10
-5. Encyclopdia unstoppable - 4/10
-6. State Creator 8/10
-7. My Color 4/10
-8. Fashion Collector 2/10
-9. Music Distrubter 3/10
-10. Elements Collector 8/10
-11. Weather Forecast 3/10
-12. Plastic Certificate 4/10
-13. Organic Snippet Collector 8/10
-14. Supply Chain Tracker 2/10
-15. Animation Libary 4/10
+## :brain: Think
+| Words              |                |                |           |                |
+|:------------------ |:-------------- |:-------------- |:--------- |:-------------- |
+| Giraffe            | Monkey         | City           | Tower     | Iot            |
+| Augumented Reality | Vision Pro     | House          | Chair     | Female         |
+| Male               | Lawyer         | Doctor         | Laptop    | Scientist      |
+| Physicist          | Chemist        | Biologist      | Germanist | Ethistics      |
+| Priest             | Coffee         | Latte Machiato | Shoes     | Poland         |
+| Germany            | Europe         | China          | Chenzhen  | India          |
+| State              | Candada        | Paint          | Color     | HSL            |
+| Clothers           | Music          | Drop           | Frequency | Universe       |
+| Family             | Children       | Toys           | ToyStory  | Animation      | 
+| Weather            | Sad            | Shiny          | Sun       | Mercury        |
+| Elements           | Plumbbumb      | Metal          | Oil       | Plastic        |
+| Bell               | Manufacturuing | Vertictes      | Time      | Smile          |
+| Band               | aShields       | Car            | Machines  | Packaging      |
+| aFirehelper        | fusion         | Switzerland    | electron  | Collider       |
+| Games              | Psychology     | Magazain       | Ocean     | Animals        |
+| Whale              | Manga          | theories       | Books     | Amazon         |
+| Netlify            | AWS            | Vercel         | Vim       | Blender        |
+| Models             | Animation      | Uv Mapping     | Wheel     | Motion Capture |
+| Terminal           | Plane          | Airport        | Raynair   | Memes          |
+| Whatsapp           | Instagram      | Bumble         | Tinder    | Facebook       |
+
+
+| Sentences                 | Rating | Description                                                                                          |
+|:------------------------- |:------ |:---------------------------------------------------------------------------------------------------- |
+| Animal tracking           | 5/10   | As a User I want to track my animals in my resovoir                                                  |
+| City Funding              | 3/10   | As a City citizen I want to be able to fund projects in my city                                      |
+| Data Distrubiton          | 4/10   | As a User I want to distrubte Data without loosing ownership                                         |
+| Health Safe               | 6/10   | As a Doctor I want to have access to my Patients Healt Data                                          |
+| Encyclopdia unstoppable   | 4/10   | As a Human I want to be access to none censored data                                                 |
+| State Creator             | 8/10   | As a User I want to create my own empire.                                                            |
+| My Color                  | 4/10   | As a User I want to have access to the lastest color trends                                          |
+| Fashion Collector         | 2/10   | As a User I want to collect the latest Fashions Trends                                               |
+| Music Distrubter          | 3/10   | As a Artist I want to distrubte my Music in a fair manner                                            |
+| Elements Collector        | 8/10   | As a Scientist I want to learn about elements and have a proove that I know things                   |
+| Weather Forecast          | 3/10   | As a Weather Scientist I want to share my forecast with the world without loosing my credentials     |
+| Plastic Certificate       | 4/10   | As a Manufacture I want to certificate my new plastics                                               |
+| Organic Snippet Collector | 8/10   | As a Biologist I want to share DNA Snippets annomyously without taking full ownership about the Data |
+| Supply Chain Tracker      | 2/10   | As a Manufacatore I want to have a proof that my supply chain is child labor free                    |
+| Animation Libary          | 4/10   | As a Animator I want to share my unique animation key frames with the world                          |
 
 :::success
 Selected Idea:  
 :bulb: State Creator - Create your Empire
 :::
 
-## Sketch
+<hr style="page-break-after: always;"/>
+
+## :pencil: Sketch
 
 ### Idea
 
@@ -116,8 +128,6 @@ Its hard to create your own State
 
 ### Diagrams
 
-#### UseCase
-
 ```plantuml
 !theme plain
 left to right direction
@@ -134,7 +144,7 @@ Citizen -- (become)
 Citizen -- (participate)
 ```
 
-#### Class Diagram
+</br>
 
 ```plantuml
 !theme plain
@@ -156,7 +166,7 @@ class State {
 State *-- Citizen
 ```
 
-#### Sequence Diagram
+</br>
 
 ```plantuml
 !theme plain
@@ -186,4 +196,69 @@ WebApp --> Citizen: Your vote was added
 SmartContract --> LandSeller: give_me_land()
 LandSeller --> SmartContract: sure, here, thanks
 end
+```
+
+<hr style="page-break-after: always;"/>
+
+## :art: Paint
+
+```rust
+#![cfg_attr(not(feature = "std"), no_std, no_main)]
+
+#[ink::contract]
+mod state_creator_04 {
+    use ink::prelude::string::String;
+
+    #[ink(storage)]
+    pub struct StateCreator04 {
+        value: bool,
+        citizien: AccountId,
+        festival: String,
+    }
+
+    impl StateCreator04 {
+        #[ink(constructor)]
+        pub fn new() -> Self {
+            Self { 
+                value: true,
+                citizien: AccountId::from([0x0; 32]),
+                festival: String::from(""),
+            }
+        }
+
+        #[ink(message)]
+        pub fn become_citizen(&mut self){
+            self.citizien = self.env().caller();
+        }
+
+        #[ink(message)]
+        pub fn get_citizen(&self) -> AccountId{
+            self.citizien
+        }
+
+        #[ink(message)]
+        pub fn do_festival(&mut self){
+            self.festival = "20240324,Herbert,50".into();
+        }
+
+        #[ink(message)]
+        pub fn get_festival(&mut self) -> String {
+            self.festival.clone()
+        }
+
+        #[ink(message)]
+        pub fn buy_land(& self){}
+
+        #[ink(message)]
+        pub fn flip(&mut self) {
+            self.value = !self.value;
+        }
+
+        #[ink(message)]
+        pub fn get(&self) -> bool {
+            self.value
+        }
+    }
+}
+
 ```
