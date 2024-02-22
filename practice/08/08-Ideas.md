@@ -1,8 +1,15 @@
 # 08-Ideas
 
+- [YT](https://youtu.be/teqBRphH38s)
+- [Code]()
+
+<hr style="page-break-after:always;"/>
+
 ## Overview
 
 [TOC]
+
+<hr style="page-break-after:always;"/>
 
 ## :brain: Think
 
@@ -27,6 +34,9 @@
 ## Rate & Select
 
 `Daffodils` - Flowerbombing - Spread your seed
+
+
+<hr style="page-break-after:always;"/>
 
 ## :pencil: Sketch
 
@@ -115,6 +125,8 @@ end
 ```
 
 </br>
+
+<hr style="page-break-after:always;"/>
 
 ## :art: Paint
 
