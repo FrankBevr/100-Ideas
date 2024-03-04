@@ -1,0 +1,22 @@
+* Organisation
+
+** Do Booky
+:LOGBOOK:
+CLOCK: [2024-03-04 Mon 21:36]--[2024-03-04 Mon 21:57] =>  0:21
+CLOCK: [2024-03-04 Mon 18:59]--[2024-03-04 Mon 21:30] =>  2:31
+CLOCK: [2024-03-04 Mon 18:36]--[2024-03-04 Mon 18:52] =>  0:16
+CLOCK: [2024-03-04 Mon 18:11]--[2024-03-04 Mon 18:31] =>  0:20
+CLOCK: [2024-03-04 Mon 16:48]--[2024-03-04 Mon 17:32] =>  0:44
+:END:
+- [X] init mdbook
+- [X] try out markdown syntax
+- [X] build it
+- [X] deploy it to wary-basket.surge.sh
+- [X] install plantuml
+- [X] check plantuml, change theme
+- [X] find some some tiny neet structure
+- [X] Write introduction.md
+- [X] Write think.md
+- [X] check and fix bugs
+- [X] commit status nicely
+- [ ] Write sketch.md
