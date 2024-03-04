@@ -1,0 +1,10 @@
+[book]
+authors = ["Frank Dierolf"]
+language = "en"
+multilingual = false
+src = "src"
+title = "100 Ideas"
+
+[preprocessor.plantuml]
+plantuml-cmd = "plantuml"
+use-data-uris = true
