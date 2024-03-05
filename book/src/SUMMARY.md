@@ -1,6 +1,9 @@
 # Summary
 
-[Introduction](./introduction.md)
+
+# Introduction 
+
+- [Intro](./intro.md)
 
 # Main Workflow
 
@@ -10,4 +13,4 @@
 
 # Conclusion
 
-- [Outro](./chapter_1.md)
+- [Outro](./outro.md)
