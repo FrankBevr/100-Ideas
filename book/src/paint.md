@@ -33,11 +33,11 @@ An other ... I could go on hours with. Anyways lets start.
 7. Spin up a node  
    `substrate-contracts-node --dev`
 8. Deploy your contract  
-   `cargo contract instantiate --suri //Alice`
+   `cargo contract instantiate --suri //Alice --execute`
 9. Call your getter  
    `cargo contract call --contract <address> --call get_digital_asset --suri //Alice`
 10. Call your setter  
-    `cargo contract call --contract <address> --call change_digital_assets --message "ipfs.io/ipfs/0fwoooGREAToooIPFSoooHASHooorouip" --suri //Alice`
+    `cargo contract call --contract <address> --call change_digital_assets --message "ipfs.io/ipfs/0fwoooGREAToooIPFSoooHASHooorouip" --suri //Alice --execute`
 11. Call your getter  
     `cargo contract call --contract <address> --call get_digital_asset --suri //Alice`
 12. DONE  
