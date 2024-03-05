@@ -71,7 +71,7 @@ The Use Case Diagram shows the User does wearing, attaching and showing.
 class Wearo {
 + digitalAsset: String
 + change_digital_assets(_asset: String)
-+ getDigitalAsset(): String
++ get_digital_asset(): String
 }
 @enduml
 ```
