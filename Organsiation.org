@@ -4,6 +4,12 @@
 
 ** Do Booky
 :LOGBOOK:
+CLOCK: [2024-03-05 Tue 22:15]--[2024-03-05 Tue 23:33] =>  1:18
+CLOCK: [2024-03-05 Tue 19:58]--[2024-03-05 Tue 22:06] =>  2:08
+CLOCK: [2024-03-05 Tue 18:58]--[2024-03-05 Tue 19:49] =>  0:51
+CLOCK: [2024-03-05 Tue 16:40]--[2024-03-05 Tue 17:11] =>  0:31
+CLOCK: [2024-03-05 Tue 13:21]--[2024-03-05 Tue 14:10] =>  0:49
+CLOCK: [2024-03-05 Tue 12:12]--[2024-03-05 Tue 12:58] =>  0:46
 CLOCK: [2024-03-05 Tue 11:05]--[2024-03-05 Tue 11:22] =>  0:17
 CLOCK: [2024-03-05 Tue 07:56]--[2024-03-05 Tue 10:07] =>  2:11
 CLOCK: [2024-03-04 Mon 22:15]--[2024-03-04 Mon 23:32] =>  1:17
@@ -27,5 +33,10 @@ CLOCK: [2024-03-04 Mon 16:48]--[2024-03-04 Mon 17:32] =>  0:44
 - [X] Write sketch.md
 - [X] Write paint.md
 - [X] setup obs
-- [ ] do Video
+- [X] do Video
+- [X] try ipfs setup, for quick adding
+- [X] do Video again
+- [X] do Video again again
+- [X] imbed video
+- [X] read it thruh
 - [ ] Write Outro.md
