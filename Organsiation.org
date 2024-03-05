@@ -1,7 +1,12 @@
+#+COLUMNS: %50ITEM(Task) %7TODO %14CLOCKSUM(Clock)
+
 * Organisation
 
 ** Do Booky
 :LOGBOOK:
+CLOCK: [2024-03-05 Tue 11:05]--[2024-03-05 Tue 11:22] =>  0:17
+CLOCK: [2024-03-05 Tue 07:56]--[2024-03-05 Tue 10:07] =>  2:11
+CLOCK: [2024-03-04 Mon 22:15]--[2024-03-04 Mon 23:32] =>  1:17
 CLOCK: [2024-03-04 Mon 21:36]--[2024-03-04 Mon 21:57] =>  0:21
 CLOCK: [2024-03-04 Mon 18:59]--[2024-03-04 Mon 21:30] =>  2:31
 CLOCK: [2024-03-04 Mon 18:36]--[2024-03-04 Mon 18:52] =>  0:16
@@ -19,4 +24,8 @@ CLOCK: [2024-03-04 Mon 16:48]--[2024-03-04 Mon 17:32] =>  0:44
 - [X] Write think.md
 - [X] check and fix bugs
 - [X] commit status nicely
-- [ ] Write sketch.md
+- [X] Write sketch.md
+- [X] Write paint.md
+- [X] setup obs
+- [ ] do Video
+- [ ] Write Outro.md
