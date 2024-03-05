@@ -12,6 +12,7 @@ An other option would to use Krita and paint your first stroke.
 An other option would to use Excel and paint your first column.  
 An other ... I could go on hours with. Anyways lets start.
 
+
 ## Build
 
 1. Setup up ink
@@ -44,7 +45,12 @@ An other ... I could go on hours with. Anyways lets start.
     12.1 (optional) commit it  
     `git add . && git commit -m ":rocket: (contracts) gotcha!"`
 
-Nice. That's it.
+**Nice. That's it.**
+
+For the people who love videos. Here a quick rundown. 
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/M0k_jhmFYoo?si=TV5sD-6kNVULx8vI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
 
 We covered the following:
 
@@ -53,6 +59,6 @@ We covered the following:
 - How to paint your first step.
 
 I will conclude our doings in the next section.
-Its less informative, more lyrical. Its writing for the sake of writing itself. Feel free to call it a day and thanks a lot for going thruh my little book. I appreciate it a lot.
+Its less informative, more lyrical. Its writing for the sake of writing itself. Feel free to call it a day and thanks a lot for going through my little book. I appreciate it a lot.
 
 Next up. Conclusion.
