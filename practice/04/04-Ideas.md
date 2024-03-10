@@ -1,18 +1,28 @@
 # 04 Ideas
 
+- [Github - PDF](https://github.com/FrankBevr/100-Ideas/blob/main/practice/04/04-Ideas.pdf)
+- [Github - Code](https://github.com/FrankBevr/100-Ideas/blob/main/practice/04/diabetes/lib.rs)
+
+<hr style="page-break-after: always;"/>
+
 ## Overview
 
 [TOC]
+
+<hr style="page-break-after: always;"/>
 
 ## Intro
 
 I'm Frank
 
-## Think
+<hr style="page-break-after: always;"/>
+
+## :brain: Think
 
 ### 100 Words
+
 | Words           |              |               |                |                 |
-|:--------------- |:------------ |:------------- |:-------------- |:--------------- |
+| :-------------- | :----------- | :------------ | :------------- | :-------------- |
 | Kindergarten    | Box          | Toys          | Plüshtier      | Garden          |
 | Dirt            | Football     | Language      | Car            | Computer        |
 | School          | Homework     | Reading       | Math           | Mandala         |
@@ -20,7 +30,7 @@ I'm Frank
 | Middle Shool    | Beer         | Class Leader  | Inline Skating | Facebook        |
 | Parties         | Organisation | Rock          | Festivals      | High School     |
 | Coffee Automat  | Chemistry    | Biotechnology | Food           | Mopped          |
-| Carneval        | Bus          | Requirments   | River          | Apprenticeship  |
+| Carneval        | Bus          | Requirements  | River          | Apprenticeship  |
 | Shoes           | Insoles      | Insurance     | Crafting       | Leather         |
 | PVC             | Ziehen       | Drilling      | Hammer         | Tools           |
 | University      | Renting      | Professors    | Exams          | Furtunity       |
@@ -32,54 +42,58 @@ I'm Frank
 | CSS             | Api          | ThreeJS       | WebGL          | glsl            |
 | Blockchain      | Solidity     | Ethereum      | Polkadot       | Moonbeam        |
 | ink             | rust         | daos          | amsterdam      | slovenia        |
-| open source     | minting      | swaping       | nfts           |                 |
+| open source     | minting      | swapping      | nfts           |                 |
 
 ### 10 Sentences
-| Word          | Name     | Phrase                     | Rating |     |
-|:------------- |:-------- |:-------------------------- |:------ |:--- |
-| Biotechnology | Diabetes | Reward your effort         | 8      |     |
-| Plüshtier     | Plusho   | Your Ai Assients           | 6      |     |
-| amsterdam     | Infm     | Share, collect, summarize  | 5      |     |
-| Mandala       | Geni     | Digital Assets Generation  | 4      |     |
-| Parties       | Puto     | Your web3 party space      | 3      |     |
-| Furtunity     | DaoHouso | Your Dao, Your House       | 2      |     |
-| glsl          | Shadero  | Generative Art             | 2      |     |
-| Emails        | Maila    | Enhance your communication | 1      |     |
-| glsl          | Shadero  | Generative Art             | 2      |     |
 
+| Word          | Name     | Phrase                     | Rating |
+| :------------ | :------- | :------------------------- | :----- |
+| Biotechnology | Diabetes | Reward your effort         | 8      |
+| Plüshtier     | Plusho   | Your Ai Assients           | 6      |
+| amsterdam     | Infm     | Share, collect, summarize  | 5      |
+| Mandala       | Geni     | Digital Assets Generation  | 4      |
+| Parties       | Puto     | Your web3 party space      | 3      |
+| Furtunity     | DaoHouso | Your Dao, Your House       | 2      |
+| glsl          | Shadero  | Generative Art             | 2      |
+| Emails        | Maila    | Enhance your communication | 1      |
+| glsl          | Shadero  | Generative Art             | 2      |
 
 ### Rate & Select
 
 **Selected:** Diabetes - Reward your effort
 
-## Sketch 
+<hr style="page-break-after: always;"/>
+
+## :pencil: Sketch
 
 ### Idea
 
-Problem: People take less care about themself. Public pays for it.
-Idea: diabetes.xyz
+Problem: People take less care about themself. Public pays for it.  
+Idea: diabetes.xyz  
 Solution: Create a reward mechanism which incentives Diabetes people.
 
-### Reuqirments
+### Reuqirements
 
-Functional Requirments:
-- The App must allow to post their achievments
+Functional Requirements:
+
+- The App must allow to post their achievements
 - The App must allow to display a leaderboard
-- The SmartContract must pay token
-- The SmartContract must post achievments
-- The SmartContract must be able to vlaidate achievments
+- The Smart Contract must pay token
+- The Smart Contract must post achievements
+- The Smart Contract must be able to validate achievements
 
-Non Functional Requirments:
-- The SmartContract must be able to the public
-- The SmartContract must be legally confirm
+Non Functional Requirements:
+
+- The Smart Contract must be able to the public
+- The Smart Contract must be legally confirm
 
 ### Stories
 
 User Story
-- As a User I want to get rewared for my diabetes treatment
-- As a User I want to post my achiements
-- As a User I want to see my score
-Insuarance Story
+
+- As a User I want to get rewarded for my diabetes treatment
+- As a User I want to post my achievements
+- As a User I want to see my score Insurance Story
 - As a Insurance Company I want to be able to invest
 
 ### Diagrams
@@ -104,10 +118,10 @@ title Class Diagram
 
 class Diabetes {
     +members: Member[]
-    +achievments: [MemberId, Achievment]
+    +achievements: [MemberId, Achievement]
     +leader: Member
     +rewared(_member: Member)
-    +post(_achievment: Achievment)
+    +post(_achievement: Achievement)
     +get_leader(): Member
     +fund()
 }
@@ -129,7 +143,7 @@ group register
 WebApp --> SmartContract: listens
 User -> WebApp: register()
 WebApp -> SmartContract: register_member()
-WebApp -> User: notify registerd
+WebApp -> User: notify register
 end
 
 group leaderboard
@@ -144,7 +158,7 @@ WebApp -> Insurance: great, you incentived nicely
 end
 
 group Post
-User -> WebApp: here my achievment
+User -> WebApp: here my achievement
 WebApp -> User: great
 end
 
@@ -155,7 +169,9 @@ SmartContract -> User: here money, great doing
 end
 ```
 
-## Paint
+<hr style="page-break-after: always;"/>
+
+## :art: Paint
 
 ```rs
 
@@ -176,7 +192,7 @@ mod diabetes {
     impl Diabetes {
         #[ink(constructor)]
         pub fn new() -> Self {
-            Self { 
+            Self {
                 value: true,
                 member: AccountId::from([0xff;32]),
                 leader: AccountId::from([0xff;32]),
@@ -219,6 +235,8 @@ mod diabetes {
 }
 
 ```
+
+<hr style="page-break-after: always;"/>
 
 ## Outro
 
