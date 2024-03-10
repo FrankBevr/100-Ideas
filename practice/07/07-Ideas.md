@@ -1,60 +1,73 @@
 # 07-Ideas
 
+- [Github - PDF](https://github.com/FrankBevr/100-Ideas/blob/main/practice/07/07-Ideas.pdf)
+- [Github - Code](https://github.com/FrankBevr/100-Ideas/blob/main/practice/07/citor/lib.rs)
+
+<hr style="page-break-after: always;"/>
+
 ## Overview
 
 [TOC]
+
+<hr style="page-break-after: always;"/>
 
 ## :brain: Think
 
 ### 100 Words
 
-Goal: Get richt pictures
+Goal: Get rich pictures
 
-- Kiddo: Blocks, Garden, Icescream, Bicycle, Football, Goalkeeper
-- Bags: After Shopping Presentation, Kathrin, Gucci, Searching, Missing, 
-- University: Furtunty, Physics, Mathematics, Marketing, Project Managment, Discreptance
-- Iot: Smart Clothes, ESP22, Particle Photon, Humidity, Heartbeat, Temperature
-- Kilt: Paris, Workshop, Dudley, Presentation, India, Identification, Certifcate, Heatlh
-- ... 
-
-:information_source: Always look for words which cover rich pictures.
+| Words      |                             |          |                 |              |                                               |
+| :--------- | :-------------------------- | :------- | :-------------- | :----------- | :-------------------------------------------- |
+| Kiddo      | Blocks                      | Garden   | Icescream       | Bicycle      | Football , Goalkeeper                         |
+| Bags       | After Shopping Presentation | Kathrin  | Gucci           | Searching    | Missing ,                                     |
+| University | Furtunty                    | Physics  | Mathematics     | Marketing    | Project Management , Discreptance             |
+| Iot        | Smart Clothes               | ESP22    | Particle Photon | Humidity     | Heartbeat , Temperature                       |
+| Kilt       | Paris                       | Workshop | Dudley          | Presentation | India , Identification , Certificate , Heatlh |
 
 ### 10 Sentences
-- Iot - Humidity - Climate Change - Keep your City Healthy - 5
-- Kiddo - Goalkeeper - Football - Train your Up, Invest in uprising stars - 5
-- Bags - Searching - Real Life Search - Track your Items- 3
-- University - Discreptance - Dating - Aligmnetscoring - 2
-- Kilt - Workshop - ... - 0
+
+| Theme      | Words        | Phrase                                            | Rating |
+| :--------- | :----------- | :------------------------------------------------ | :----- |
+| Iot        | Humidity     | Climate Change - Keep your City Healthy           | 5      |
+| Kidd       | Goalkeeper   | Football -Train your Up, Invest in uprising stars | 5      |
+| Bags       | Searching    | Real Life Search -Track your Items                | 3      |
+| University | Discreptance | Dating - Aligmnetscoring                          | 2      |
+| Kilt       | Workshop     | ...                                               | 0      |
 
 ### Select & Rate
 
 Selected: Citor - Keep your City Healthy
 
-## :pencil: Sketch 
+<hr style="page-break-after: always;"/>
+
+## :pencil: Sketch
 
 ### Idea
 
-Problem: Cities have a bad Climate
-Idea: Citor - Keep your City Healthy
+Problem: Cities have a bad Climate  
+Idea: Citor - Keep your City Healthy  
 Solution: `Citor.xyz`
 
-### Requirments
+### Requirements
 
-Functional Requirments
-- The SmartContract must be able to controll right funding
+Functional Requirements
+
+- The Smart Contract must be able to control right funding
 - The User must Allow to post Sensor Data
-- The GasSensor must be able to store Data 
+- The Gas Sensor must be able to store Data
 
-Non Functional Reuqirments
-- Cities must be attracked to it
+Non Functional Requirements
+
+- Cities must be attracted to it
 
 ### User Stories
 
 - As a User I want to store my Sensor Data manually
 - As a User I want to see which area is the worst
 - As a User I want to see which area is the best
-- As a GasSensor I want to post my data easily
-- As a SmartContract I want to be able to route funding
+- As a Gas Sensor I want to post my data easily
+- As a Smart Contract I want to be able to route funding
 
 ### Diagrams
 
@@ -70,6 +83,7 @@ User -- (see bad)
 GasSensor -- (post)
 SmartContract -- (route)
 ```
+
 </br>
 
 ```plantuml
@@ -78,7 +92,7 @@ title Class
 
 class Citor {
     + area: distrcitcs[]
-    + gasData: String 
+    + gasData: String
     + store(_gasData: String)
     + get_gas_data(): String
     + add_district(_district: District)
@@ -118,8 +132,9 @@ User -> WebApp: let me build something cool
 WebApp -> SmartContract: yeah sounds great, we have money
 SmartContract -> User: here, money, do what you say gonna do
 
-
 ```
+
+<hr style="page-break-after: always;"/>
 
 ## :art: Paint
 
@@ -175,8 +190,10 @@ mod citor {
 }
 ```
 
+<hr style="page-break-after: always;"/>
+
 ## Outro
+
 - Think, Sketch, Paint
 - Adaptable
 - Potential
-
