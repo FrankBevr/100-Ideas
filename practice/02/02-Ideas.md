@@ -1,36 +1,46 @@
 # 02-Ideas
-- [Youtube](https://youtu.be/P_xxstTo5zY)
-- [PDF](https://github.com/FrankBevr/100-Ideas/blob/main/practice/02/02-Ideas.pdf)
-- [Code](https://github.com/FrankBevr/100-Ideas/blob/main/practice/02/researcho/lib.rs)
 
+- [Youtube](https://youtu.be/P_xxstTo5zY)
+- [Github - PDF](https://github.com/FrankBevr/100-Ideas/blob/main/practice/02/02-Ideas.pdf)
+- [Github - Code](https://github.com/FrankBevr/100-Ideas/blob/main/practice/02/researcho/lib.rs)
 <hr style="page-break-after:always;"/>
 
 ## Overview
+
 ### :wave: Intro
+
 - [x] I'm Frank
+
 ### :brain: Think
+
 - [x] Words
 - [x] Sentences
 - [x] Rate
 - [x] Select
+
 ### :pencil: Sketch
+
 - [x] Idea
-    - [x] Problem
-    - [x] Solution
-- [x] Requirments
-    - [x] Functional Requirments
-    - [x] Non Functional Requirments
+  - [x] Problem
+  - [x] Solution
+- [x] Requirements
+  - [x] Functional Requirements
+  - [x] Non Functional Requirements
 - [x] Stories
 - [x] Diagrams
-    - [x] UseCase
-    - [x] Class
-    - [x] Sequence
+  - [x] Use Case
+  - [x] Class
+  - [x] Sequence
+
 ### :art: Paint
+
 - [x] `cargo contract new our_great_idea`
 - [x] `cargo contract build`
 - [x] `cargo contract call`
+
 ### :wave: Outro
-- [x] What: Think, Sketch, Paint 
+
+- [x] What: Think, Sketch, Paint
 - [x] How: Markdown, UML, ink!
 - [x] Why: Fast
 
@@ -41,13 +51,13 @@
 > :dart: Goal Write 100 Words
 
 | Words          |                |                |               |               |
-|:-------------- |:-------------- |:-------------- |:------------- |:------------- |
+| :------------- | :------------- | :------------- | :------------ | :------------ |
 | monkey         | health         | orthesis       | services      | craftsmens    |
 | lawyer         | packaging      | wallpainting   | iot           | ar            |
 | xr             | mr             | art            | 3d            | 2d            |
 | krita          | blender        | figma          | uiux          | thailand      |
 | city           | funding        | germany        | azerbajan     | kyrgystan     |
-| poltics        | state          | statesmen      | light         | physics       |
+| politics       | state          | statesmen      | light         | physics       |
 | chemisit       | bilogist       | germanist      | lingustic     | ethics        |
 | religion       | school         | education      | chair         | fashion       |
 | online shops   | jackets        | consulting     | lawyer        | games         |
@@ -56,7 +66,7 @@
 | banana         | dirt           | excavator      | neurofeedback | construction  |
 | datastructures | youtube        | facebook       | whatsapp      | tinder        |
 | bumble         | erotic         | internet       | history       | technology    |
-| sitting        | walking        | sports         | atheltics     | fitness       |
+| sitting        | walking        | sports         | athletics     | fitness       |
 | rope jumping   | inline skating | skating        | music         | r&b           |
 | rock           | metal          | electro        | electro swing | jazz          |
 | piano          | instruments    | gitare         | eyes          | mouth         |
@@ -67,20 +77,20 @@
 > :dart: Goal: Write 10 sentences & rate it
 
 | Name               | Catchphrase                                    | Rating |
-|:------------------ |:---------------------------------------------- |:------ |
+| :----------------- | :--------------------------------------------- | :----- |
 | Craftsmen Tooling  | Track your productivity                        | 6      |
 | Digital Production | Distrubte your creations                       | 2      |
-| Corruption         | keep politicans accountable                    | 7      |
-| Clothes            | your clothes your production your distrubtion  | 4      |
+| Corruption         | keep politicians accountable                   | 7      |
+| Clothes            | your clothes your production your distribution | 4      |
 | History            | real history safe for the history no screwnity | 5      |
 | Universe           | own your new planet                            | 3      |
-| Chemistry          | fund the unkown                                | 7      |
+| Chemistry          | fund the unknown                               | 7      |
 | Sports             | get fair training                              | 2      |
 | Instruments        | you voice your song                            | 2      |
 | Hardware           | opensource next level                          | 4      |
-| Calender           | time can be diffrent                           | 2      |
+| Calender           | time can be different                          | 2      |
 
-> :dart: Goal Select: Chemistry - Fund the unkown
+> :dart: Goal Select: Chemistry - Fund the unknown
 
 <hr style="page-break-after: always;"/>
 
@@ -90,33 +100,36 @@
 
 #### Problem
 
-Fund research with unkown outcome is diffcult
+Fund research with unknown outcome is difficult
 
 #### Solution
 
 `research.xyz`
 
-### Requirments
+### Requirements
 
-#### Functional Requirments
+#### Functional Requirements
 
 - The app must allow the User to login
 - The contract must fund projects
 - The contract should be apply for funding
 
-#### Non Functional Requirments
+#### Non Functional Requirements
 
-- The smart contract must be accesible to everyone
+- The smart contract must be accessible to everyone
 
 ### Stories
 
 #### User Story
+
 - As a User I want to be able to login
-- As a User I want to overivew the current funded projects
-#### Instituion Story
+- As a User I want to overview the current funded projects
+
+#### Institution Story
+
 - As a Institution I want reliable funding proposals
 
-### Diagramms
+### Diagrams
 
 ```plantuml
 !theme plain
@@ -127,12 +140,13 @@ skinparam titleFontSize 14
 skinparam titleFontStyle normal
 
 actor User
-actor Instituion
+actor Institution
 
 User -- (login)
 User -- (overview)
-Instituion -- (get proposal)
+Institution -- (get proposal)
 ```
+
 </br>
 
 ```plantuml
@@ -167,8 +181,8 @@ Researcho *-- Proposal
 title Sequence Diagram
 skinparam titleFontSize 14
 skinparam titleFontStyle normal
-actor User 
-actor Instituion 
+actor User
+actor Institution
 entity WebApp
 database SmartContract
 
@@ -177,9 +191,11 @@ User -> WebApp: let me in
 WebApp -> SmartContract: become_member()
 WebApp -> User: hurei, you are a member
 SmartContract -> SmartContract: checks proposals
-SmartContract -> Instituion: send_proposal
-Instituion -> SmartContract: I take it its great
+SmartContract -> Institution: send_proposal
+Institution -> SmartContract: I take it its great
 ```
+
+<hr style="page-break-after:always;"/>
 
 ## :art: Paint
 
@@ -200,8 +216,8 @@ mod researcho {
     impl Researcho {
         #[ink(constructor)]
         pub fn new() -> Self {
-            Self { 
-                value: true, 
+            Self {
+                value: true,
                 proposal: String::from(""),
                 member: AccountId::from([0x0;32])
             }
