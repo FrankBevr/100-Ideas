@@ -1,26 +1,32 @@
 # 05 Ideas
 
-- [YT](https://youtu.be/ZwXQOF1Vc6E)
+- [Youtube](https://youtu.be/ZwXQOF1Vc6E)
+- [Github - PDF](https://github.com/FrankBevr/100-Ideas/blob/main/practice/05/05-Ideas.pdf)
+- [Github - Code](https://github.com/FrankBevr/100-Ideas/blob/main/practice/05/ocp/lib.rs)
+
+<hr style="page-break-after: always;"/>
 
 ## Overview
 
 - Intro
 - Think
-  - 100 Words
-  - 10 Sentences
-  - rate & select
+  - [x] 100 Words
+  - [x] 10 Sentences
+  - [x] rate & select
 - Sketch
-  - Idea
-  - Requirments
-  - Stories
-  - Diagrams
+  - [x] Idea
+  - [x] Requirements
+  - [x] Stories
+  - [x] Diagrams
 - Paint
-  - cargo contract new my_great_idea
-  - cargo contract build
-  - cargo contract call
+  - [x] write
+  - [x] build
+  - [x] call
 - Outro
 
-## Think
+<hr style="page-break-after: always;"/>
+
+## :brain: Think
 
 ### 100 Words
 
@@ -45,7 +51,7 @@
 | LanParty     | Networking Game    | network on chain           | 2      |
 | Women        | Dating             | Tokenize your game         | 5      |
 | Biomechanics | Analyse            | Train your Ai              | 3      |
-| SQL          | Datbase            | Datascruture Converter     | 3      |
+| SQL          | Database           | Datascruture Converter     | 3      |
 | Rabbit       | Animal Care        | Care real, produce virtual | 2      |
 | cutting      | Tooling            | How to hold your scissor   | 2      |
 
@@ -53,33 +59,36 @@
 
 3D Printing - 1 Click Production - Your dreams in one click
 
-## Sketch
+<hr style="page-break-after: always;"/>
+
+## :pencil: Sketch
 
 ### Idea
 
-**Problem:** Producing a Product is Hard **Idea:** 1 Click Production - Your
-dreams in one click **Solution:** `oneclickproduction.xyz`
+**Problem:** Producing a Product is Hard  
+**Idea:** 1 Click Production - Your dreams in one click  
+**Solution:** `oneclickproduction.xyz`
 
-### Requirments
+### Requirements
 
-**Functional Requirments:**
+**Functional Requirements:**
 
 - The Smart Contract must be able to offers of atomic services
 - The App must be slice a product in smaller subtasks
 - The User must be able to insert his product description
-- The User must be able to recieve the best production line
+- The User must be able to receive the best production line
 
-**Non Functional Requirments:**
+**Non Functional Requirements:**
 
 - The App must align with the German Law
 - The App must have a slick Design
 
 ### Stories
 
-- As a SmartContract I want to be able to make offer to other contracts
+- As a Smart Contract I want to be able to make offer to other contracts
 - As a User I want to get the best production line for my product
 - As a User I want to type only one description in.
-- As a User I want to select diffrent production lines
+- As a User I want to select different production lines
 
 ### Diagrams
 
@@ -115,7 +124,7 @@ class OCP {
 !theme plain
 title Sequence
 
-actor User 
+actor User
 entity Frontend
 entity Backend
 database SmartContract
@@ -142,8 +151,8 @@ end
 group selection
 Frontend -> User: Thats the best, but there are more options
 User -> Frontend: I take the best, i trust you
-Frontend -> SmartContract: he aggrees
-end 
+Frontend -> SmartContract: he agrees
+end
 
 group sign
 User -> SmartContract: signs
@@ -158,7 +167,9 @@ User -> Frontend: Yeah, its amazing
 end
 ```
 
-## Paint
+<hr style="page-break-after: always;"/>
+
+## :art: Paint
 
 ```rust
 #![cfg_attr(not(feature = "std"), no_std, no_main)]
@@ -177,7 +188,7 @@ mod ocp {
     impl Ocp {
         #[ink(constructor)]
         pub fn new() -> Self {
-            Self { 
+            Self {
                 value: true,
                 input: String::from("I want 5 rocks"),
                 offer: String::from("No offer mi amigo")
@@ -196,7 +207,7 @@ mod ocp {
 
         #[ink(message)]
         pub fn make_offers(&mut self) {
-            self.offer = String::from("mining,5euro;packaging,3euro") 
+            self.offer = String::from("mining,5euro;packaging,3euro")
         }
 
         #[ink(message)]
@@ -206,6 +217,8 @@ mod ocp {
     }
 }
 ```
+
+<hr style="page-break-after: always;"/>
 
 ## Outro
 
