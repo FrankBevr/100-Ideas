@@ -47,6 +47,7 @@ Copy whatever you find useful and make it your own.
 
   - `./practice/01` - `StateCreator : Create your own Empire`
   - `./practice/02` - `Researcho : Fund your research`
+  - `./practice/03` - `Decentralised Farming - John Dear on Chain `
   - `./practice/04` - `Diabetes : Reward your effort`
   - `./practice/05` - `OCP : One Click Production`
   - `./practice/07` - `Citor : Keep your City Healthy`
@@ -57,12 +58,11 @@ Copy whatever you find useful and make it your own.
   - `./practice/12` - `Talento : Incentives your subtalents`
 
 > [!TIP]  
-> These are Ideas are first drafts. To make something out of it you need to
-> throw
+> These are Ideas. To make something out of it needs work.
 >
 > - 20+ hour to have something
 > - 100 hour to have something running
-> - 200 hours to have an MVP Personal Estimation.
+> - 200 hours to have kind of an MVP.
 >
 > That's my personal estimation. Usually everything needs some kind of UI, Frontend, Backend, SmartContract and in my cases I usually have a 3D chunk, which needs some love, as well.
 
