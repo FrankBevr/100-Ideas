@@ -17,7 +17,8 @@
 
 ## Description
 
-**Hola** 🌤️
+```md
+### Hola 🌤️
 
 Its a book.
 
@@ -26,8 +27,7 @@ The book has 2 reasons of existence.
 1. Tinker around wording & phrasing for an upcoming presentation.
 2. I wanna write a book once in my life. Next up, plant a tee, I guess. 🐒
 
-Its a 15 minutes read. Simple and Concise.
-
+Its a 15 minutes read. Simple and Concise.\
 Its covers three questions.
 
 - How to generate Ideas.
@@ -37,12 +37,14 @@ Its covers three questions.
 This knowledge / skill served me really well.\
 Copy whatever you find useful and make it your own.
 
-**Cheers** 👋
+### Cheers 👋
+```
 
 ## Overview
 
 - `./book/` The mdbook
 - `./practice/` The practice Sessions
+
   - `./practice/01` - `StateCreator : Create your own Empire`
   - `./practice/02` - `Researcho : Fund your research`
   - `./practice/04` - `Diabetes : Reward your effort`
@@ -57,6 +59,7 @@ Copy whatever you find useful and make it your own.
   > [!WARNING]\
   > These are Ideas are first drafts. To make something out of it you need to
   > throw
+  >
   > - 20+ hour to have something
   > - 100 hour to have something running
   > - 200 hours to have an MVP Personal Estimation.
@@ -65,8 +68,9 @@ Copy whatever you find useful and make it your own.
 
 1. Have a presentation. Get a glimbse of a broder reaction. Alias, It this cool
    or just useful to me 🤷
-2. Maybe. Do a ink dev course. Contained one simple Idea with one simple Project
-   after another. [Inspiration](https://youtu.be/gyMwXuJrbJQ?si=qbeCpNm6n_2sfzcz)
+2. (undecided) Do a ink dev course. One simple Idea, one Project, one lesson
+   after another.
+   [Inspiration](https://youtu.be/gyMwXuJrbJQ?si=qbeCpNm6n_2sfzcz)
 
 ## Team
 
