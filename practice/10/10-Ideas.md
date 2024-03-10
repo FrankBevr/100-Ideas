@@ -1,38 +1,48 @@
 # 10-Ideas
 
+- [Youtube](https://drive.google.com/file/d/1hgev9DiSWYy0rvLfXvK_AEgjQbJMf6Cf/view?usp=sharing)
+- [Github - PDF](https://github.com/FrankBevr/100-Ideas/blob/main/practice/11/11-Ideas.pdf)
+- [Github - Code](https://github.com/FrankBevr/100-Ideas/blob/main/practice/11/stylo/lib.rs)
+
+<hr style="page-break-after: always;"/>
+
 ## Overview
 
 - Intro
 - Think
-  - 100 Words
-  - 10 Sentences
-  - Rate & Select
+  - [x] 100 Words
+  - [x] 10 Sentences
+  - [x] Rate & Select
 - Sketch
-  - Idea
-  - Requirments
-  - Stories
-  - Diagrams
+  - [x] Idea
+  - [x] Requirements
+  - [x] Stories
+  - [x] Diagrams
 - Paint
-  - Write
-  - Build
-  - Test
+  - [x] Write
+  - [x] Build
+  - [x] Call
 - Outro
+
+<hr style="page-break-after: always;"/>
 
 ## :brain: Think
 
 ### 100 Words
 
-- rich pictures
+- Note: Create Rich Pictures. That's it.
 
-Earings, Chair, Technician, Suits, Merch
-Mandala, Fight Club, After Life, Board, Monopoly
-Keyboard, Coffee, Thailand, Mess, Outlook, 
-Blender, Ask, Games, Hydra, Acala, 
+| Words    |            |            |       |          |
+| :------- | :--------- | :--------- | :---- | :------- |
+| Earings  | Chair      | Technician | Suits | Merch    |
+| Mandala  | Fight Club | After Life | Board | Monopoly |
+| Keyboard | Coffee     | Thailand   | Mess  | Outlook  |
+| Blender  | Ask        | Games      | Hydra | Acala    |
 
 ### 10 Sentences
 
 | Theme        | Word     | Phrase             | Rating |
-|:------------ |:-------- |:------------------ |:------ |
+| :----------- | :------- | :----------------- | :----- |
 | Delivery     | Hydra    | Sharing is caring  | 7      |
 | Perception   | Suits    | Your Look on chain | 5      |
 | Organisation | Mess     | Your room in order | 4      |
@@ -42,29 +52,35 @@ Blender, Ask, Games, Hydra, Acala,
 
 The winner is `percepto.xyz`
 
+<hr style="page-break-after: always;"/>
+
 ## :pencil: Sketch
 
 ### Idea
+
 > Common is Problem Solution
 
 Problem: Montetize your fashion style
 Solution: Your Style your Brand
-Solution: `percepto.xyz` 
+Solution: `percepto.xyz`
 
-### Requirments
+### Requirements
 
-**Functional Requirments**
-- The app must collect your stylechoices
-- The app must able to seel things
-**Non Functional Requirments**
-- The app should align with thai law
+**Functional Requirements**
+
+- The app must collect your style choices
+- The app must able to sell things
+
+**Non Functional Requirements**
+
+- The app should align with Thailand's law
 - The User must should have a happy feeling
 
 ### Stories
 
 - As a User, I want share my style to the world
 - As a User, I want mint unique styles
-- As a SmartContract, I want to handle it
+- As a Smart Contract, I want to handle it
 
 ### Diagrams
 
@@ -120,13 +136,15 @@ Follower -> WebApp: here 50 bucks
 WebApp -> SmartContract: here 50 bucks
 SmartContract -> SmartContract: add styleowners
 WebApp -> Follower: congrats, its yours. Delivery comes soon
-end 
+end
 
 group delivery
 WebApp -> Backend: dooo your thiiing!
 Backend -> Backend: does it thing
 end
 ```
+
+<hr style="page-break-after: always;"/>
 
 ## :art: Paint
 
