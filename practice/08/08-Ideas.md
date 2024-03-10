@@ -1,7 +1,8 @@
 # 08-Ideas
 
-- [YT](https://youtu.be/teqBRphH38s)
-- [Code]()
+- [Youtube](https://youtu.be/teqBRphH38s)
+- [Github - PDF](https://github.com/FrankBevr/100-Ideas/blob/main/practice/08/08-Ideas.pdf)
+- [Github - Code](https://github.com/FrankBevr/100-Ideas/blob/main/practice/08/daffodils/lib.rs)
 
 <hr style="page-break-after:always;"/>
 
@@ -15,15 +16,15 @@
 
 ### 100 Words
 
-| Theme    | Words    |           |          |           |
-| :------- | :------- | :-------- | :------- | :-------- |
-| Feburary | grey     | cold      | karneval | daffodils |
-| Home     | Bred     | Dog       | Sister   | Couch     |
-| Series   | Sherlock | One Piece | Scrubs   | Lie       |
-| Street   | yew gum  |           |          |           |
-| Drinking | meters   |           |          |           |
+| Theme     | Words    |           |          |           |
+| :-------- | :------- | :-------- | :------- | :-------- |
+| Februrary | grey     | cold      | karneval | daffodils |
+| Home      | Bred     | Dog       | Sister   | Couch     |
+| Series    | Sherlock | One Piece | Scrubs   | Lie       |
+| Street    | yew gum  |           |          |           |
+| Drinking  | meters   |           |          |           |
 
-## 10 Sentence
+### 10 Sentence
 
 | Word      | Name          | Phrase                     | Rating |
 | :-------- | :------------ | :------------------------- | :----- |
@@ -31,10 +32,9 @@
 | Sherlock  | Analyso       | Fraud Decetion             | 5      |
 | Dog       | Disabilties   | Your Assitent on your feet | 4      |
 
-## Rate & Select
+### Rate & Select
 
 `Daffodils` - Flowerbombing - Spread your seed
-
 
 <hr style="page-break-after:always;"/>
 
@@ -46,16 +46,16 @@ Problem: Too much grey in City\
 Idea: Flowerbombing - Spread your seed\
 Solution: `daffodils.xyz`
 
-### Requirments
+### Requirements
 
-Functional Requirments:
+Functional Requirements:
 
 - The App must do seed the city
 - The User must able to select seeding area
 - The User must be able to propose seed
 - The Smart Contract must handle the funding part
 
-NonFunction Requirments:
+NonFunctional Requirements:
 
 - The App should be in align with the England Law
 - The App should be easy to use
