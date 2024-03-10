@@ -56,13 +56,15 @@ Copy whatever you find useful and make it your own.
   - `./practice/11` - `Roady : AI yourself in absence`
   - `./practice/12` - `Talento : Incentives your subtalents`
 
-  > [!WARNING]\
-  > These are Ideas are first drafts. To make something out of it you need to
-  > throw
-  >
-  > - 20+ hour to have something
-  > - 100 hour to have something running
-  > - 200 hours to have an MVP Personal Estimation.
+> [!TIP]  
+> These are Ideas are first drafts. To make something out of it you need to
+> throw
+>
+> - 20+ hour to have something
+> - 100 hour to have something running
+> - 200 hours to have an MVP Personal Estimation.
+>
+> That's my personal estimation. Usually everything needs some kind of UI, Frontend, Backend, SmartContract and in my cases I usually have a 3D chunk, which needs some love, as well.
 
 ## Future
 
