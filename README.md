@@ -6,7 +6,7 @@
 <p align="center">
   <a href="https://frankbevr.github.io/100-Ideas/">The Book</a>
   ·
-  <a href="">Youtube</a>
+  <a href="https://drive.google.com/file/d/158uzJhS89BisuUFCwXYOa2nv6n4Oq3We/view?usp=sharing">Youtube</a>
   ·
   <a href="https://github.com/FrankBevr/100-Ideas">Code</a>
 </p>
