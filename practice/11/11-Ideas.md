@@ -1,46 +1,58 @@
 # 11-Ideas
 
+- [Youtube](https://drive.google.com/file/d/17XwU5txFvttUfz0nkVoUpwKSVOPKjF4Z/view?usp=sharing)
+- [Github - PDF](https://github.com/FrankBevr/100-Ideas/blob/main/practice/11/11-Ideas.pdf)
+- [Github - Code](https://github.com/FrankBevr/100-Ideas/blob/main/practice/11/roady/lib.rs)
+
+<hr style="page-break-after: always;"/>
+
 ## Overview
 
 - Intro
 - Think
-  - 100 Words
-  - 10 Sentences
-  - Rate & Select
+  - [x] 100 Words
+  - [x] 10 Sentences
+  - [x] Rate & Select
 - Sketch
-  - Idea
-  - Requirments
-  - Stories
-  - Diagrams
+  - [x] Idea
+  - [x] Requirements
+  - [x] Stories
+  - [x] Diagrams
 - Paint
-  - Write
-  - Build
-  - Call
+  - [x] Write
+  - [x] Build
+  - [x] Call
 - Outro
+
+<hr style="page-break-after: always;"/>
 
 ## :brain: Think
 
 ### 100 Words
 
-- rich pictures
+- Note: Create Rich Pictures. That's it.
 
-Perls, Chair, Haircut, Lipstick, Technican,
-Mandala, Hancok, OnePiece, Sarah, Amsterdam,
-Babej, Seoul, Blender, Beer, Bike, 
-Coffee, Braclet, Tooth, Thailand, Smile,
+| Words   |         |          |          |           |
+| :------ | :------ | :------- | :------- | :-------- |
+| Perls   | Chair   | Haircut  | Lipstick | Technican |
+| Mandala | Hancok  | OnePiece | Sarah    | Amsterdam |
+| Babej   | Seoul   | Blender  | Beer     | Bike      |
+| Coffee  | Braclet | Tooth    | Thailand | Smile     |
 
 ### 10 Sentences
 
-| Theme      | Word     | Sentence                | Rating |
-|:---------- |:-------- |:----------------------- |:------ |
-| Roadtrip   | Bike     | AI for you roadtrip     | 8      |
-| Growth     | Thailand | Growth thought diffrent | 4      |
-| AfterSells | Haircut  | Your Hair, your product | 4      |
-| Experience | OnePiece | Manga on steroids       | 3      |
+| Theme      | Word     | Sentence                 | Rating |
+| :--------- | :------- | :----------------------- | :----- |
+| Roadtrip   | Bike     | AI for you roadtrip      | 8      |
+| Growth     | Thailand | Growth thought different | 4      |
+| AfterSells | Haircut  | Your Hair, your product  | 4      |
+| Experience | OnePiece | Manga on steroids        | 3      |
 
 ### Rate & Select
 
 The winner is `roady.xyz`
+
+<hr style="page-break-after: always;"/>
 
 ## :pencil: Sketch
 
@@ -50,18 +62,20 @@ Problem: Giving Instruction on live events is tricky,especially on roadtrips
 Idea: Write an AI which answers it correctly
 Solution: `roady.xyz`
 
-### Requirments
+### Requirements
 
-**Functional Requirments**
+**Functional Requirements**
+
 - The App must do generate an AI to generate a Live Video
 
-**Non functional Requirments**
+**Non functional Requirements**
+
 - The App must be profitable
 
 ### User Stories
 
 - As a User I want to generate an AI which give my instructions
-- As a SmartContract I want remove the centralised entity, I handle it.
+- As a Smart Contract I want remove the centralised entity, I handle it.
 
 ### Diagrams
 
@@ -73,7 +87,6 @@ SmartContract -- (make it efficient)
 ```
 
 </br>
-
 
 ```plantuml
 !theme plain
@@ -110,6 +123,8 @@ WebApp -> SmartContract: does cally
 SmartContract -> User: does sendy
 end
 ```
+
+<hr style="page-break-after: always;"/>
 
 ### :art: Paint
 
@@ -165,13 +180,3 @@ mod roady {
 }
 
 ```
-
-
-
-
-
-
-
-
-
-
