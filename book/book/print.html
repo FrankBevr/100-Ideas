@@ -1,0 +1,513 @@
+<!DOCTYPE HTML>
+<html lang="en" class="light" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>100 Ideas</title>
+        <meta name="robots" content="noindex">
+
+
+        <!-- Custom HTML head -->
+        
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+    </head>
+    <body class="sidebar-visible no-js">
+    <div id="body-container">
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('light')
+            html.classList.add(theme);
+            var body = document.querySelector('body');
+            body.classList.remove('no-js')
+            body.classList.add('js');
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var body = document.querySelector('body');
+            var sidebar = null;
+            var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            body.classList.remove('sidebar-visible');
+            body.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><li class="part-title">Introduction</li><li class="chapter-item expanded "><a href="intro.html"><strong aria-hidden="true">1.</strong> Intro</a></li><li class="chapter-item expanded affix "><li class="part-title">Main Workflow</li><li class="chapter-item expanded "><a href="think.html"><strong aria-hidden="true">2.</strong> Think</a></li><li class="chapter-item expanded "><a href="sketch.html"><strong aria-hidden="true">3.</strong> Sketch</a></li><li class="chapter-item expanded "><a href="paint.html"><strong aria-hidden="true">4.</strong> Paint</a></li><li class="chapter-item expanded affix "><li class="part-title">Conclusion</li><li class="chapter-item expanded "><a href="outro.html"><strong aria-hidden="true">5.</strong> Outro</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">100 Ideas</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="introduction"><a class="header" href="#introduction">Introduction</a></h1>
+<p><strong>Hello everyone</strong> 👋</p>
+<p>I'm Frank. Nice to see you here.</p>
+<p>This book is about how to work with Ideas.</p>
+<p>If you can afford 15 minutes of your time then this book is for you.<br />
+If you can't, that's fine. Life is too short.</p>
+<p>What we will cover:</p>
+<ul>
+<li>Introduction</li>
+<li>Think
+<ul>
+<li>100 Words</li>
+<li>10 Sentences</li>
+<li>Rate &amp; Select</li>
+</ul>
+</li>
+<li>Sketch
+<ul>
+<li>Idea</li>
+<li>Requirements</li>
+<li>Stories</li>
+<li>Diagrams</li>
+</ul>
+</li>
+<li>Paint
+<ul>
+<li>Write</li>
+<li>Compile</li>
+<li>Run</li>
+</ul>
+</li>
+<li>Conclusion</li>
+</ul>
+<p>Before we start, brew a coffee, make yourself comfortable and add some Music.<br />
+Personally, I can recommend a classical filter coffee on a fresh morning with some upbeat non-vocal music. <em>f.e.</em> <a href="https://music.youtube.com/browse/MPADUCehltvwFEKIuSpJ0ktRxGpQ">Ehrling</a></p>
+<p><strong>Cheers ⛅</strong></p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="-think"><a class="header" href="#-think">🧠 Think</a></h1>
+<p>The Section <code>Think</code> deals with How to generate an Idea.</p>
+<h2 id="100-words"><a class="header" href="#100-words">100 Words</a></h2>
+<p>Lets generate 100 Words. I usually refer to it as collect 100 rich pictures. A rich picture is a vivid memory, experience or dream of yours.</p>
+<p>A quick example. Do you remember how you drove your first time to the ice-scream shop with your family with your tiny bicycle. The sun, the laughter, the hurdle to going up the mountain, the dog who sniffed shamelessly on other dogs and everyone rolled their eyes. Correct that's a rich picture. We can call it Ice scream. Word 1.</p>
+<p>Ice scream, dog, bicycle, high mountain, sunny</p>
+<p>You can generate from one word with a rich picture association many other words, if you want. I prefer to keep it as one. Ice scream.</p>
+<p>We want many. So we have to expand. The easiest route is to use our life. Alias Kindergarten, School, High School, Middle School, University, Job, University again, Freelancer, Job again, Cooperate, ... or boyfriend A, boyfriend B, girlfriend C, nofriend D, manyfriend E ... or home, there, here, there again ... or ... choose your poison of how you go through time. 🤷</p>
+<p>Enough tralala, lets do 100 Words.</p>
+<div class="table-wrapper"><table><thead><tr><th style="text-align: left">Words</th><th style="text-align: left">-</th><th style="text-align: left">-</th><th style="text-align: left">-</th><th style="text-align: left">-</th></tr></thead><tbody>
+<tr><td style="text-align: left">Kindergarten</td><td style="text-align: left">Indianer</td><td style="text-align: left">Football</td><td style="text-align: left">Power Rangers</td><td style="text-align: left">Mandala</td></tr>
+<tr><td style="text-align: left">School</td><td style="text-align: left">Reading Night</td><td style="text-align: left">Clown</td><td style="text-align: left">Backery</td><td style="text-align: left">Bus waiting</td></tr>
+<tr><td style="text-align: left">Middle School</td><td style="text-align: left">Trip</td><td style="text-align: left">Nightwish</td><td style="text-align: left">Kaba</td><td style="text-align: left">Lan Party</td></tr>
+<tr><td style="text-align: left">High School</td><td style="text-align: left">Chemistry</td><td style="text-align: left">Coffee</td><td style="text-align: left">Melindabar</td><td style="text-align: left">Motorcycle</td></tr>
+<tr><td style="text-align: left">Apprenticeship</td><td style="text-align: left">Clue</td><td style="text-align: left">Leather</td><td style="text-align: left">Documentation</td><td style="text-align: left">Evaluation</td></tr>
+<tr><td style="text-align: left">University</td><td style="text-align: left">City</td><td style="text-align: left">Train</td><td style="text-align: left">Nightshift</td><td style="text-align: left">Wingman</td></tr>
+<tr><td style="text-align: left">Job</td><td style="text-align: left">Hololens</td><td style="text-align: left">Influencer</td><td style="text-align: left">Unity</td><td style="text-align: left">BMW</td></tr>
+<tr><td style="text-align: left">University</td><td style="text-align: left">Hospital</td><td style="text-align: left">Swiss</td><td style="text-align: left">FIRE</td><td style="text-align: left">Communication</td></tr>
+<tr><td style="text-align: left">Freelancer</td><td style="text-align: left">Tel Aviv</td><td style="text-align: left">Kanada</td><td style="text-align: left">Wordpress</td><td style="text-align: left">Head Hunter</td></tr>
+<tr><td style="text-align: left">Web</td><td style="text-align: left">Frameworks</td><td style="text-align: left">Chickens</td><td style="text-align: left">Weeding</td><td style="text-align: left">Linux</td></tr>
+<tr><td style="text-align: left">Web3</td><td style="text-align: left">Hackathons</td><td style="text-align: left">Punks</td><td style="text-align: left">Decentraland</td><td style="text-align: left">Wearables</td></tr>
+<tr><td style="text-align: left">Polkadot</td><td style="text-align: left">Validators</td><td style="text-align: left">Berry</td><td style="text-align: left">Computation</td><td style="text-align: left">Beatbox</td></tr>
+<tr><td style="text-align: left">Iot</td><td style="text-align: left">Makerspace Clothes</td><td style="text-align: left">Laser Cutting</td><td style="text-align: left">Particle Photon</td><td style="text-align: left">Raspberry Pi</td></tr>
+<tr><td style="text-align: left">AR</td><td style="text-align: left">Pokemon Go</td><td style="text-align: left">Cortana</td><td style="text-align: left">Construction</td><td style="text-align: left">CAD</td></tr>
+<tr><td style="text-align: left">Blockchain</td><td style="text-align: left">Ethereum</td><td style="text-align: left">Moonbeam</td><td style="text-align: left">Rarible</td><td style="text-align: left">CosmWasm</td></tr>
+<tr><td style="text-align: left">3D</td><td style="text-align: left">GLSL</td><td style="text-align: left">Yeti</td><td style="text-align: left">Marine</td><td style="text-align: left">Pixel</td></tr>
+<tr><td style="text-align: left">AI</td><td style="text-align: left">Incentivastion</td><td style="text-align: left">Rescue</td><td style="text-align: left">QuantumIBM</td><td style="text-align: left">Letters</td></tr>
+<tr><td style="text-align: left">Cloud</td><td style="text-align: left">Toilet</td><td style="text-align: left">G5</td><td style="text-align: left">Face</td><td style="text-align: left">Render</td></tr>
+<tr><td style="text-align: left">Hacking</td><td style="text-align: left">Kali</td><td style="text-align: left">CCC</td><td style="text-align: left">Facebook</td><td style="text-align: left">Prince</td></tr>
+<tr><td style="text-align: left">Art</td><td style="text-align: left">Character</td><td style="text-align: left">Stone</td><td style="text-align: left">Concept</td><td style="text-align: left">Moodboard</td></tr>
+</tbody></table>
+</div>
+<p>OK. Maybe choosing only 5 Columns was no the best Idea. In the end I just added some classical buzzwords to flow it through and to call it a day. Everything is allowed.</p>
+<p>You need rich pictures. That's it.</p>
+<h2 id="10-sentences"><a class="header" href="#10-sentences">10 Sentences</a></h2>
+<p>Now we choose from two rows one word that we like.</p>
+<ol>
+<li>Power Rangers</li>
+<li>Nightwish</li>
+<li>Nightshift</li>
+<li>Influencer</li>
+<li>Wearables</li>
+<li>Particle Photon</li>
+<li>Construction</li>
+<li>Yeti</li>
+<li>QuantumIBM</li>
+<li>CCC</li>
+</ol>
+<p>OK. Now we need creative juice. Orange Juice works great, if you wanna go nuts, try grapefruit.
+Roughly it works the following. Think about picture, frame it in a theme and add a catchphrase. Tada, your billion Dollar Startup idea.</p>
+<div class="table-wrapper"><table><thead><tr><th style="text-align: left">Word</th><th style="text-align: left">Theme</th><th style="text-align: left">Catchphrase</th></tr></thead><tbody>
+<tr><td style="text-align: left">Power Rangers</td><td style="text-align: left">Gadget</td><td style="text-align: left">Your Clock, your time</td></tr>
+<tr><td style="text-align: left">Nightwish</td><td style="text-align: left">Experience</td><td style="text-align: left">Eventbrite to the ground</td></tr>
+<tr><td style="text-align: left">Nightshift</td><td style="text-align: left">Learning</td><td style="text-align: left">Math your Friend</td></tr>
+<tr><td style="text-align: left">Influencer</td><td style="text-align: left">Partnerships</td><td style="text-align: left">Partnerships Mangment more personal then ever before</td></tr>
+<tr><td style="text-align: left">Wearables</td><td style="text-align: left">Game Assets</td><td style="text-align: left">Equip to the moon</td></tr>
+<tr><td style="text-align: left">Particle Photon</td><td style="text-align: left">Holograms</td><td style="text-align: left">Your House in your pocket, Live</td></tr>
+<tr><td style="text-align: left">Construction</td><td style="text-align: left">Big Machines</td><td style="text-align: left">BEM on Chain</td></tr>
+<tr><td style="text-align: left">QuantumIBM</td><td style="text-align: left">Radio</td><td style="text-align: left">Radio done new. Your Frequency, your assets</td></tr>
+<tr><td style="text-align: left">CCC</td><td style="text-align: left">Community</td><td style="text-align: left">Tools create Community</td></tr>
+</tbody></table>
+</div>
+<p>I will not elaborate each association. It makes sense to me and that's what counts. About every Catchphrase could be written articles. So just do the same, if you wanna. If you do it with a friend, that becomes a blob of fun.</p>
+<h2 id="rate--select"><a class="header" href="#rate--select">Rate &amp; Select</a></h2>
+<p>Go with gut feeling. Take a number from 1 to 10 and call it a day. Then sort the Ideas</p>
+<div class="table-wrapper"><table><thead><tr><th style="text-align: left">Word</th><th style="text-align: left">Theme</th><th style="text-align: left">Catchphrase</th><th style="text-align: left">Rating</th></tr></thead><tbody>
+<tr><td style="text-align: left">Particle Photon</td><td style="text-align: left">Holograms</td><td style="text-align: left">Your House in your pocket, Live</td><td style="text-align: left">6</td></tr>
+<tr><td style="text-align: left">Wearables</td><td style="text-align: left">Game Assets</td><td style="text-align: left">Equip to the moon</td><td style="text-align: left">5</td></tr>
+<tr><td style="text-align: left">Construction</td><td style="text-align: left">Big Machines</td><td style="text-align: left">BEM on Chain</td><td style="text-align: left">5</td></tr>
+<tr><td style="text-align: left">QuantumIBM</td><td style="text-align: left">Radio</td><td style="text-align: left">Radio done new. Your Frequency, your assets</td><td style="text-align: left">5</td></tr>
+<tr><td style="text-align: left">Nightshift</td><td style="text-align: left">Learning</td><td style="text-align: left">Math your Friend</td><td style="text-align: left">4</td></tr>
+<tr><td style="text-align: left">CCC</td><td style="text-align: left">Community</td><td style="text-align: left">Tools create Community</td><td style="text-align: left">4</td></tr>
+<tr><td style="text-align: left">Power Rangers</td><td style="text-align: left">Gadget</td><td style="text-align: left">Your Clock, your time</td><td style="text-align: left">2</td></tr>
+<tr><td style="text-align: left">Nightwish</td><td style="text-align: left">Experience</td><td style="text-align: left">Eventbrite to the ground</td><td style="text-align: left">2</td></tr>
+<tr><td style="text-align: left">Influencer</td><td style="text-align: left">Partnerships</td><td style="text-align: left">Partnerships Mangment more personal then ever before</td><td style="text-align: left">2</td></tr>
+</tbody></table>
+</div>
+<p>So, here shines a lot of personal bias thruh as I just realised. Personalwise I would go with <code>Wearables</code>, i would change the catchphrase. But a cool Iron Man Watche is definitely something that I like and can run with it. Buisnesswise <code>Construction</code> is the best. BEM is ... BIM, I wanted to write BIM. BIM means Building Information Modeling. Its a way how to structure and store information on a construction side, in lay terms obviously. It already screams for decentralised technology. Nonetheless I don't want to run with it. I go with the quirky one. <code>Wearables</code> . Lets see if we can conjure something nicely up.</p>
+<p>The Winner is <code>Wearo: Wearables think different</code></p>
+<p>Next up Sketching. ✏️</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="-sketch"><a class="header" href="#-sketch">✏️ Sketch</a></h1>
+<p>The Section <code>Sketch</code> deals with shaping an Idea.</p>
+<p>The structure is bluntly copied from Software requirement engineering 101. You can use whatever mental model you like. There is no right or wrong.
+The goal is to shape the Idea. Every Industry has their unique solution. In art its called concept art. In construction its called draft. In consulting it's called Hubertus Soradium Conventi Modela III, i assume. Nomatter what you choose, the gist of it is, take the Idea and chunk this thing down.</p>
+<p>So, Grab your farmer shirt, sharpen your axe. Let's chop this beauty down.</p>
+<h2 id="idea"><a class="header" href="#idea">Idea</a></h2>
+<blockquote>
+<p>There are many ways to frame an Idea. In business context usually its expected to talk about Problem and Solution. Other ways would be to frame it in what, how and why. Just to give another example.</p>
+</blockquote>
+<p><strong>Problem</strong>: Digital Assets are not equipable<br />
+<strong>Idea</strong>: Digital Assets on Wearables<br />
+<strong>Solution</strong>: <code>wearo.xyz</code></p>
+<blockquote>
+<p>That's it. If you are ambitious you can write a businessplan out of it. Or elaborate the Idea in a one pager.</p>
+</blockquote>
+<h2 id="requirements"><a class="header" href="#requirements">Requirements</a></h2>
+<blockquote>
+<p>In Requirements we think roughly about what our product should do. Its a common practice to divide it in functional and nonfunctional requirements</p>
+</blockquote>
+<p><strong>Functional Requirements</strong></p>
+<ul>
+<li>The Wearable must be digital equipable</li>
+<li>The Digital Equipment must be ownable</li>
+<li>The Wearable must be a wearable</li>
+</ul>
+<p><strong>Non Functional Requirements</strong></p>
+<ul>
+<li>The Product should be easy accessible.</li>
+</ul>
+<h2 id="stories"><a class="header" href="#stories">Stories</a></h2>
+<blockquote>
+<p>In Stories we take our requirement and form Stories out of it. There is mostly a User Stories, but could also include a Smart Contract Story, Frontend Story, Maintainer Story ... . Important is that you break down your bare Requirements in actors and actions. That's kind of the gist of it.</p>
+</blockquote>
+<p><strong>User Story</strong></p>
+<ul>
+<li>As a User I want to wear a cool Equipment.</li>
+<li>As a User I want to attach different assets one</li>
+<li>As a User I want to show my assets somehow</li>
+</ul>
+<blockquote>
+<p>Yeap. That should do the job. I am still not certain where I am going with it. In my backhead is, that I want to gift a wearable to a friend. Currently it seem like that I will go this route. The Ironman watch, which i mentioned previously is kind of a picture that stuck. Overall the theme is move quick, move fast. Sketch with a chalk not with a thiny pencil.</p>
+</blockquote>
+<h2 id="diagrams"><a class="header" href="#diagrams">Diagrams</a></h2>
+<blockquote>
+<p>Diagrams are the more important section. We quickly think through what is the use, how the data could look like and how the things move of whatever we build. We will use UML for it. That's literally built for it. Sweet.</p>
+</blockquote>
+<h3 id="use-case"><a class="header" href="#use-case">Use Case</a></h3>
+<p><img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXMtYXNjaWkiIHN0YW5kYWxvbmU9Im5vIj8+PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiBjb250ZW50U3R5bGVUeXBlPSJ0ZXh0L2NzcyIgaGVpZ2h0PSIxNzRweCIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSIgc3R5bGU9IndpZHRoOjE5M3B4O2hlaWdodDoxNzRweDtiYWNrZ3JvdW5kOiNGRkZGRkY7IiB2ZXJzaW9uPSIxLjEiIHZpZXdCb3g9IjAgMCAxOTMgMTc0IiB3aWR0aD0iMTkzcHgiIHpvb21BbmRQYW49Im1hZ25pZnkiPjxkZWZzLz48Zz48IS0tZW50aXR5IFVzZXItLT48ZyBpZD0iZWxlbV9Vc2VyIj48ZWxsaXBzZSBjeD0iMjciIGN5PSI2MCIgZmlsbD0iI0ZGRkZGRiIgcng9IjgiIHJ5PSI4IiBzdHlsZT0ic3Ryb2tlOiMwMDAwMDA7c3Ryb2tlLXdpZHRoOjEuMDsiLz48cGF0aCBkPSJNMjcsNjggTDI3LDk1IE0xNCw3NiBMNDAsNzYgTTI3LDk1IEwxNCwxMTAgTTI3LDk1IEw0MCwxMTAgIiBmaWxsPSJub25lIiBzdHlsZT0ic3Ryb2tlOiMwMDAwMDA7c3Ryb2tlLXdpZHRoOjEuMDsiLz48dGV4dCBmaWxsPSIjMDAwMDAwIiBmb250LWZhbWlseT0iVmVyZGFuYSIgZm9udC1zaXplPSIxNCIgbGVuZ3RoQWRqdXN0PSJzcGFjaW5nIiB0ZXh0TGVuZ3RoPSIzMiIgeD0iMTEiIHk9IjEyNC45OTUxIj5Vc2VyPC90ZXh0PjwvZz48ZyBpZD0iZWxlbV93ZWFyIj48ZWxsaXBzZSBjeD0iMTQ0LjgzMzgiIGN5PSIyNS41Mjg3IiBmaWxsPSIjRkZGRkZGIiByeD0iMzQuODMzOCIgcnk9IjE0LjUyODciIHN0eWxlPSJzdHJva2U6IzAwMDAwMDtzdHJva2Utd2lkdGg6MS4wOyIvPjx0ZXh0IGZpbGw9IiMwMDAwMDAiIGZvbnQtZmFtaWx5PSJWZXJkYW5hIiBmb250LXNpemU9IjE0IiBsZW5ndGhBZGp1c3Q9InNwYWNpbmciIHRleHRMZW5ndGg9IjMzIiB4PSIxMjcuNjY3MSIgeT0iMjguNjE2OCI+d2VhcjwvdGV4dD48L2c+PGcgaWQ9ImVsZW1fYXR0YWNoIj48ZWxsaXBzZSBjeD0iMTQ1LjE1MzEiIGN5PSI4OS42MDEzIiBmaWxsPSIjRkZGRkZGIiByeD0iNDIuMTUzMSIgcnk9IjE0LjYwMTMiIHN0eWxlPSJzdHJva2U6IzAwMDAwMDtzdHJva2Utd2lkdGg6MS4wOyIvPjx0ZXh0IGZpbGw9IiMwMDAwMDAiIGZvbnQtZmFtaWx5PSJWZXJkYW5hIiBmb250LXNpemU9IjE0IiBsZW5ndGhBZGp1c3Q9InNwYWNpbmciIHRleHRMZW5ndGg9IjQzIiB4PSIxMjAuNjUzMSIgeT0iOTMuMzQ4OSI+YXR0YWNoPC90ZXh0PjwvZz48ZyBpZD0iZWxlbV9zaG93Ij48ZWxsaXBzZSBjeD0iMTQ1LjIyMzEiIGN5PSIxNTMuNTQ4NSIgZmlsbD0iI0ZGRkZGRiIgcng9IjM3LjcyMzEiIHJ5PSIxNC41NDg1IiBzdHlsZT0ic3Ryb2tlOiMwMDAwMDA7c3Ryb2tlLXdpZHRoOjEuMDsiLz48dGV4dCBmaWxsPSIjMDAwMDAwIiBmb250LWZhbWlseT0iVmVyZGFuYSIgZm9udC1zaXplPSIxNCIgbGVuZ3RoQWRqdXN0PSJzcGFjaW5nIiB0ZXh0TGVuZ3RoPSIzNyIgeD0iMTI1LjExMTYiIHk9IjE1Ni45MzEyIj5zaG93PC90ZXh0PjwvZz48IS0tbGluayBVc2VyIHRvIHdlYXItLT48ZyBpZD0ibGlua19Vc2VyX3dlYXIiPjxwYXRoIGQ9Ik00My4xNiw4MS4xMyBDNjMuNjgsNjkuODIgMTAwLjM0LDQ5LjU5IDEyMy4zNSwzNi44OSAiIGZpbGw9Im5vbmUiIGlkPSJVc2VyLXdlYXIiIHN0eWxlPSJzdHJva2U6IzAwMDAwMDtzdHJva2Utd2lkdGg6MS4wOyIvPjwvZz48IS0tbGluayBVc2VyIHRvIGF0dGFjaC0tPjxnIGlkPSJsaW5rX1VzZXJfYXR0YWNoIj48cGF0aCBkPSJNNDMuMTYsODkuNSBDNTguMjcsODkuNSA4Mi4xNCw4OS41IDEwMi44Niw4OS41ICIgZmlsbD0ibm9uZSIgaWQ9IlVzZXItYXR0YWNoIiBzdHlsZT0ic3Ryb2tlOiMwMDAwMDA7c3Ryb2tlLXdpZHRoOjEuMDsiLz48L2c+PCEtLWxpbmsgVXNlciB0byBzaG93LS0+PGcgaWQ9ImxpbmtfVXNlcl9zaG93Ij48cGF0aCBkPSJNNDMuMTYsOTcuODcgQzYzLjQzLDEwOS4wNSA5OS40NiwxMjguOTMgMTIyLjUyLDE0MS42NSAiIGZpbGw9Im5vbmUiIGlkPSJVc2VyLXNob3ciIHN0eWxlPSJzdHJva2U6IzAwMDAwMDtzdHJva2Utd2lkdGg6MS4wOyIvPjwvZz48L2c+PC9zdmc+" alt="" /></p>
+<p>The Use Case Diagram shows the User does wearing, attaching and showing.<br />
+1 Actor 3 Actions. If you think on Ebay, as an example, User does buy, sell and maybe review. Like always follow <a href="https://en.wikipedia.org/wiki/KISS_principle">KISS</a></p>
+<h3 id="class"><a class="header" href="#class">Class</a></h3>
+<p><img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXMtYXNjaWkiIHN0YW5kYWxvbmU9Im5vIj8+PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiBjb250ZW50U3R5bGVUeXBlPSJ0ZXh0L2NzcyIgaGVpZ2h0PSIxMThweCIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSIgc3R5bGU9IndpZHRoOjMwNnB4O2hlaWdodDoxMThweDtiYWNrZ3JvdW5kOiNGRkZGRkY7IiB2ZXJzaW9uPSIxLjEiIHZpZXdCb3g9IjAgMCAzMDYgMTE4IiB3aWR0aD0iMzA2cHgiIHpvb21BbmRQYW49Im1hZ25pZnkiPjxkZWZzLz48Zz48IS0tY2xhc3MgV2Vhcm8tLT48ZyBpZD0iZWxlbV9XZWFybyI+PHJlY3QgY29kZUxpbmU9IjIiIGZpbGw9IiNGRkZGRkYiIGhlaWdodD0iOTIuODkwNiIgaWQ9IldlYXJvIiByeD0iMi41IiByeT0iMi41IiBzdHlsZT0ic3Ryb2tlOiMwMDAwMDA7c3Ryb2tlLXdpZHRoOjEuMDsiIHdpZHRoPSIyODAiIHg9IjEyIiB5PSIxMiIvPjxlbGxpcHNlIGN4PSIxMjYuMjUiIGN5PSIyNiIgZmlsbD0iI0ZGRkZGRiIgcng9IjkiIHJ5PSI5IiBzdHlsZT0ic3Ryb2tlOiMwMDAwMDA7c3Ryb2tlLXdpZHRoOjEuMDsiLz48cGF0aCBkPSJNMTI5LjIxODgsMzEuNjQwNiBRMTI4LjY0MDYsMzEuOTM3NSAxMjgsMzIuMDc4MSBRMTI3LjM1OTQsMzIuMjM0NCAxMjYuNjU2MywzMi4yMzQ0IFExMjQuMTU2MywzMi4yMzQ0IDEyMi44MjgxLDMwLjU5MzggUTEyMS41MTU2LDI4LjkzNzUgMTIxLjUxNTYsMjUuODEyNSBRMTIxLjUxNTYsMjIuNjg3NSAxMjIuODI4MSwyMS4wMzEzIFExMjQuMTU2MywxOS4zNzUgMTI2LjY1NjMsMTkuMzc1IFExMjcuMzU5NCwxOS4zNzUgMTI4LDE5LjUzMTMgUTEyOC42NTYzLDE5LjY4NzUgMTI5LjIxODgsMTkuOTg0NCBMMTI5LjIxODgsMjIuNzAzMSBRMTI4LjU5MzgsMjIuMTI1IDEyOCwyMS44NTk0IFExMjcuNDA2MywyMS41NzgxIDEyNi43ODEzLDIxLjU3ODEgUTEyNS40Mzc1LDIxLjU3ODEgMTI0Ljc1LDIyLjY1NjMgUTEyNC4wNjI1LDIzLjcxODggMTI0LjA2MjUsMjUuODEyNSBRMTI0LjA2MjUsMjcuOTA2MyAxMjQuNzUsMjguOTg0NCBRMTI1LjQzNzUsMzAuMDQ2OSAxMjYuNzgxMywzMC4wNDY5IFExMjcuNDA2MywzMC4wNDY5IDEyOCwyOS43ODEzIFExMjguNTkzOCwyOS41IDEyOS4yMTg4LDI4LjkyMTkgTDEyOS4yMTg4LDMxLjY0MDYgWiAiIGZpbGw9IiMwMDAwMDAiLz48dGV4dCBmaWxsPSIjMDAwMDAwIiBmb250LWZhbWlseT0iVmVyZGFuYSIgZm9udC1zaXplPSIxNCIgbGVuZ3RoQWRqdXN0PSJzcGFjaW5nIiB0ZXh0TGVuZ3RoPSI0NCIgeD0iMTQzLjc1IiB5PSIzMC44NDY3Ij5XZWFybzwvdGV4dD48bGluZSBzdHlsZT0ic3Ryb2tlOiMwMDAwMDA7c3Ryb2tlLXdpZHRoOjEuMDsiIHgxPSIxMyIgeDI9IjI5MSIgeTE9IjQwIiB5Mj0iNDAiLz48ZWxsaXBzZSBjeD0iMjMiIGN5PSI1My42NDg0IiBmaWxsPSJub25lIiByeD0iMyIgcnk9IjMiIHN0eWxlPSJzdHJva2U6IzAwMDAwMDtzdHJva2Utd2lkdGg6MS4wOyIvPjx0ZXh0IGZpbGw9IiMwMDAwMDAiIGZvbnQtZmFtaWx5PSJWZXJkYW5hIiBmb250LXNpemU9IjE0IiBsZW5ndGhBZGp1c3Q9InNwYWNpbmciIHRleHRMZW5ndGg9IjEyOCIgeD0iMzAiIHk9IjU2Ljk5NTEiPmRpZ2l0YWxBc3NldDogU3RyaW5nPC90ZXh0PjxsaW5lIHN0eWxlPSJzdHJva2U6IzAwMDAwMDtzdHJva2Utd2lkdGg6MS4wOyIgeDE9IjEzIiB4Mj0iMjkxIiB5MT0iNjQuMjk2OSIgeTI9IjY0LjI5NjkiLz48ZWxsaXBzZSBjeD0iMjMiIGN5PSI3Ny45NDUzIiBmaWxsPSIjRkZGRkZGIiByeD0iMyIgcnk9IjMiIHN0eWxlPSJzdHJva2U6IzAwMDAwMDtzdHJva2Utd2lkdGg6MS4wOyIvPjx0ZXh0IGZpbGw9IiMwMDAwMDAiIGZvbnQtZmFtaWx5PSJWZXJkYW5hIiBmb250LXNpemU9IjE0IiBsZW5ndGhBZGp1c3Q9InNwYWNpbmciIHRleHRMZW5ndGg9IjI1NiIgeD0iMzAiIHk9IjgxLjI5MiI+Y2hhbmdlX2RpZ2l0YWxfYXNzZXRzKF9hc3NldDogU3RyaW5nKTwvdGV4dD48ZWxsaXBzZSBjeD0iMjMiIGN5PSI5NC4yNDIyIiBmaWxsPSIjRkZGRkZGIiByeD0iMyIgcnk9IjMiIHN0eWxlPSJzdHJva2U6IzAwMDAwMDtzdHJva2Utd2lkdGg6MS4wOyIvPjx0ZXh0IGZpbGw9IiMwMDAwMDAiIGZvbnQtZmFtaWx5PSJWZXJkYW5hIiBmb250LXNpemU9IjE0IiBsZW5ndGhBZGp1c3Q9InNwYWNpbmciIHRleHRMZW5ndGg9IjE3NCIgeD0iMzAiIHk9Ijk3LjU4ODkiPmdldF9kaWdpdGFsX2Fzc2V0KCk6IFN0cmluZzwvdGV4dD48L2c+PC9nPjwvc3ZnPg==" alt="" /></p>
+<p>The Class Diagram shows, how the digital representation of the Data could look like. I recommend, assume you have no clue and run with the first thing that rushes through your head. The most important part is to spend the minute itself. If you want to see real example, just extend on etherescan. <a href="https://etherscan.io/viewsvg?t=1&amp;a=0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2">Wrapped Ether</a> - <a href="https://etherscan.io/viewsvg?t=1&amp;a=0x06012c8cf97bead5deae237070f9587f8e7a266d">Crypto Kitties</a>.</p>
+<h3 id="sequence"><a class="header" href="#sequence">Sequence</a></h3>
+<p><img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXMtYXNjaWkiIHN0YW5kYWxvbmU9Im5vIj8+PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiBjb250ZW50U3R5bGVUeXBlPSJ0ZXh0L2NzcyIgaGVpZ2h0PSI3MzlweCIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSIgc3R5bGU9IndpZHRoOjkwOHB4O2hlaWdodDo3MzlweDtiYWNrZ3JvdW5kOiNGRkZGRkY7IiB2ZXJzaW9uPSIxLjEiIHZpZXdCb3g9IjAgMCA5MDggNzM5IiB3aWR0aD0iOTA4cHgiIHpvb21BbmRQYW49Im1hZ25pZnkiPjxkZWZzLz48Zz48cmVjdCBmaWxsPSIjRkZGRkZGIiBoZWlnaHQ9IjE3NS43OTY5IiBzdHlsZT0ic3Ryb2tlOiMwMDAwMDA7c3Ryb2tlLXdpZHRoOjEuMDsiIHdpZHRoPSI4MzAiIHg9IjE1IiB5PSI5OS4yOTY5Ii8+PHJlY3QgZmlsbD0iI0ZGRkZGRiIgaGVpZ2h0PSIyMjEuMDYyNSIgc3R5bGU9InN0cm9rZTojMDAwMDAwO3N0cm9rZS13aWR0aDoxLjA7IiB3aWR0aD0iODg3LjUiIHg9IjE1IiB5PSIyODkuMDkzOCIvPjxyZWN0IGZpbGw9IiNGRkZGRkYiIGhlaWdodD0iMTE3LjUzMTMiIHN0eWxlPSJzdHJva2U6IzAwMDAwMDtzdHJva2Utd2lkdGg6MS4wOyIgd2lkdGg9IjQxMSIgeD0iMTUiIHk9IjUyNC4xNTYzIi8+PGxpbmUgc3R5bGU9InN0cm9rZTojMDAwMDAwO3N0cm9rZS13aWR0aDoxLjA7IiB4MT0iNDQiIHgyPSI0NCIgeTE9IjgyLjI5NjkiIHkyPSI2NTguNjg3NSIvPjxsaW5lIHN0eWxlPSJzdHJva2U6IzAwMDAwMDtzdHJva2Utd2lkdGg6MS4wOyIgeDE9IjM4NCIgeDI9IjM4NCIgeTE9IjgyLjI5NjkiIHkyPSI2NTguNjg3NSIvPjxsaW5lIHN0eWxlPSJzdHJva2U6IzAwMDAwMDtzdHJva2Utd2lkdGg6MS4wOyIgeDE9IjYzMy41IiB4Mj0iNjMzLjUiIHkxPSI4Mi4yOTY5IiB5Mj0iNjU4LjY4NzUiLz48bGluZSBzdHlsZT0ic3Ryb2tlOiMwMDAwMDA7c3Ryb2tlLXdpZHRoOjEuMDsiIHgxPSI4MzkuNSIgeDI9IjgzOS41IiB5MT0iODIuMjk2OSIgeTI9IjY1OC42ODc1Ii8+PHRleHQgZmlsbD0iIzAwMDAwMCIgZm9udC1mYW1pbHk9IlZlcmRhbmEiIGZvbnQtc2l6ZT0iMTQiIGxlbmd0aEFkanVzdD0ic3BhY2luZyIgdGV4dExlbmd0aD0iMzIiIHg9IjI1IiB5PSI3OC45OTUxIj5Vc2VyPC90ZXh0PjxlbGxpcHNlIGN4PSI0NCIgY3k9IjE0IiBmaWxsPSIjRkZGRkZGIiByeD0iOCIgcnk9IjgiIHN0eWxlPSJzdHJva2U6IzAwMDAwMDtzdHJva2Utd2lkdGg6MS4wOyIvPjxwYXRoIGQ9Ik00NCwyMiBMNDQsNDkgTTMxLDMwIEw1NywzMCBNNDQsNDkgTDMxLDY0IE00NCw0OSBMNTcsNjQgIiBmaWxsPSJub25lIiBzdHlsZT0ic3Ryb2tlOiMwMDAwMDA7c3Ryb2tlLXdpZHRoOjEuMDsiLz48dGV4dCBmaWxsPSIjMDAwMDAwIiBmb250LWZhbWlseT0iVmVyZGFuYSIgZm9udC1zaXplPSIxNCIgbGVuZ3RoQWRqdXN0PSJzcGFjaW5nIiB0ZXh0TGVuZ3RoPSIzMiIgeD0iMjUiIHk9IjY3MC42ODI2Ij5Vc2VyPC90ZXh0PjxlbGxpcHNlIGN4PSI0NCIgY3k9IjY4Mi45ODQ0IiBmaWxsPSIjRkZGRkZGIiByeD0iOCIgcnk9IjgiIHN0eWxlPSJzdHJva2U6IzAwMDAwMDtzdHJva2Utd2lkdGg6MS4wOyIvPjxwYXRoIGQ9Ik00NCw2OTAuOTg0NCBMNDQsNzE3Ljk4NDQgTTMxLDY5OC45ODQ0IEw1Nyw2OTguOTg0NCBNNDQsNzE3Ljk4NDQgTDMxLDczMi45ODQ0IE00NCw3MTcuOTg0NCBMNTcsNzMyLjk4NDQgIiBmaWxsPSJub25lIiBzdHlsZT0ic3Ryb2tlOiMwMDAwMDA7c3Ryb2tlLXdpZHRoOjEuMDsiLz48dGV4dCBmaWxsPSIjMDAwMDAwIiBmb250LWZhbWlseT0iVmVyZGFuYSIgZm9udC1zaXplPSIxNCIgbGVuZ3RoQWRqdXN0PSJzcGFjaW5nIiB0ZXh0TGVuZ3RoPSI1OCIgeD0iMzUyIiB5PSI3OC45OTUxIj5XZWJBcHA8L3RleHQ+PGVsbGlwc2UgY3g9IjM4NCIgY3k9IjUwIiBmaWxsPSIjRkZGRkZGIiByeD0iMTIiIHJ5PSIxMiIgc3R5bGU9InN0cm9rZTojMDAwMDAwO3N0cm9rZS13aWR0aDoxLjA7Ii8+PGxpbmUgc3R5bGU9InN0cm9rZTojMDAwMDAwO3N0cm9rZS13aWR0aDoxLjA7IiB4MT0iMzcyIiB4Mj0iMzk2IiB5MT0iNjQiIHkyPSI2NCIvPjx0ZXh0IGZpbGw9IiMwMDAwMDAiIGZvbnQtZmFtaWx5PSJWZXJkYW5hIiBmb250LXNpemU9IjE0IiBsZW5ndGhBZGp1c3Q9InNwYWNpbmciIHRleHRMZW5ndGg9IjU4IiB4PSIzNTIiIHk9IjY3MC42ODI2Ij5XZWJBcHA8L3RleHQ+PGVsbGlwc2UgY3g9IjM4NCIgY3k9IjY4OS45ODQ0IiBmaWxsPSIjRkZGRkZGIiByeD0iMTIiIHJ5PSIxMiIgc3R5bGU9InN0cm9rZTojMDAwMDAwO3N0cm9rZS13aWR0aDoxLjA7Ii8+PGxpbmUgc3R5bGU9InN0cm9rZTojMDAwMDAwO3N0cm9rZS13aWR0aDoxLjA7IiB4MT0iMzcyIiB4Mj0iMzk2IiB5MT0iNzAzLjk4NDQiIHkyPSI3MDMuOTg0NCIvPjx0ZXh0IGZpbGw9IiMwMDAwMDAiIGZvbnQtZmFtaWx5PSJWZXJkYW5hIiBmb250LXNpemU9IjE0IiBsZW5ndGhBZGp1c3Q9InNwYWNpbmciIHRleHRMZW5ndGg9IjYxIiB4PSI2MDAuNSIgeT0iNzguOTk1MSI+QmFja2VuZDwvdGV4dD48ZWxsaXBzZSBjeD0iNjM0IiBjeT0iNTAiIGZpbGw9IiNGRkZGRkYiIHJ4PSIxMiIgcnk9IjEyIiBzdHlsZT0ic3Ryb2tlOiMwMDAwMDA7c3Ryb2tlLXdpZHRoOjEuMDsiLz48bGluZSBzdHlsZT0ic3Ryb2tlOiMwMDAwMDA7c3Ryb2tlLXdpZHRoOjEuMDsiIHgxPSI2MjIiIHgyPSI2NDYiIHkxPSI2NCIgeTI9IjY0Ii8+PHRleHQgZmlsbD0iIzAwMDAwMCIgZm9udC1mYW1pbHk9IlZlcmRhbmEiIGZvbnQtc2l6ZT0iMTQiIGxlbmd0aEFkanVzdD0ic3BhY2luZyIgdGV4dExlbmd0aD0iNjEiIHg9IjYwMC41IiB5PSI2NzAuNjgyNiI+QmFja2VuZDwvdGV4dD48ZWxsaXBzZSBjeD0iNjM0IiBjeT0iNjg5Ljk4NDQiIGZpbGw9IiNGRkZGRkYiIHJ4PSIxMiIgcnk9IjEyIiBzdHlsZT0ic3Ryb2tlOiMwMDAwMDA7c3Ryb2tlLXdpZHRoOjEuMDsiLz48bGluZSBzdHlsZT0ic3Ryb2tlOiMwMDAwMDA7c3Ryb2tlLXdpZHRoOjEuMDsiIHgxPSI2MjIiIHgyPSI2NDYiIHkxPSI3MDMuOTg0NCIgeTI9IjcwMy45ODQ0Ii8+PHRleHQgZmlsbD0iIzAwMDAwMCIgZm9udC1mYW1pbHk9IlZlcmRhbmEiIGZvbnQtc2l6ZT0iMTQiIGxlbmd0aEFkanVzdD0ic3BhY2luZyIgdGV4dExlbmd0aD0iOTkiIHg9Ijc4Ny41IiB5PSI3OC45OTUxIj5TbWFydENvbnRyYWN0PC90ZXh0PjxwYXRoIGQ9Ik04MjIsMzAgQzgyMiwyMCA4NDAsMjAgODQwLDIwIEM4NDAsMjAgODU4LDIwIDg1OCwzMCBMODU4LDU2IEM4NTgsNjYgODQwLDY2IDg0MCw2NiBDODQwLDY2IDgyMiw2NiA4MjIsNTYgTDgyMiwzMCAiIGZpbGw9IiNGRkZGRkYiIHN0eWxlPSJzdHJva2U6IzAwMDAwMDtzdHJva2Utd2lkdGg6MS41OyIvPjxwYXRoIGQ9Ik04MjIsMzAgQzgyMiw0MCA4NDAsNDAgODQwLDQwIEM4NDAsNDAgODU4LDQwIDg1OCwzMCAiIGZpbGw9Im5vbmUiIHN0eWxlPSJzdHJva2U6IzAwMDAwMDtzdHJva2Utd2lkdGg6MS41OyIvPjx0ZXh0IGZpbGw9IiMwMDAwMDAiIGZvbnQtZmFtaWx5PSJWZXJkYW5hIiBmb250LXNpemU9IjE0IiBsZW5ndGhBZGp1c3Q9InNwYWNpbmciIHRleHRMZW5ndGg9Ijk5IiB4PSI3ODcuNSIgeT0iNjcwLjY4MjYiPlNtYXJ0Q29udHJhY3Q8L3RleHQ+PHBhdGggZD0iTTgyMiw2ODMuOTg0NCBDODIyLDY3My45ODQ0IDg0MCw2NzMuOTg0NCA4NDAsNjczLjk4NDQgQzg0MCw2NzMuOTg0NCA4NTgsNjczLjk4NDQgODU4LDY4My45ODQ0IEw4NTgsNzA5Ljk4NDQgQzg1OCw3MTkuOTg0NCA4NDAsNzE5Ljk4NDQgODQwLDcxOS45ODQ0IEM4NDAsNzE5Ljk4NDQgODIyLDcxOS45ODQ0IDgyMiw3MDkuOTg0NCBMODIyLDY4My45ODQ0ICIgZmlsbD0iI0ZGRkZGRiIgc3R5bGU9InN0cm9rZTojMDAwMDAwO3N0cm9rZS13aWR0aDoxLjU7Ii8+PHBhdGggZD0iTTgyMiw2ODMuOTg0NCBDODIyLDY5My45ODQ0IDg0MCw2OTMuOTg0NCA4NDAsNjkzLjk4NDQgQzg0MCw2OTMuOTg0NCA4NTgsNjkzLjk4NDQgODU4LDY4My45ODQ0ICIgZmlsbD0ibm9uZSIgc3R5bGU9InN0cm9rZTojMDAwMDAwO3N0cm9rZS13aWR0aDoxLjU7Ii8+PHBhdGggZD0iTTE1LDk5LjI5NjkgTDE0NCw5OS4yOTY5IEwxNDQsMTA2LjQyOTcgTDEzNCwxMTYuNDI5NyBMMTUsMTE2LjQyOTcgTDE1LDk5LjI5NjkgIiBmaWxsPSIjRkZGRkZGIiBzdHlsZT0ic3Ryb2tlOiMwMDAwMDA7c3Ryb2tlLXdpZHRoOjEuMDsiLz48cmVjdCBmaWxsPSJub25lIiBoZWlnaHQ9IjE3NS43OTY5IiBzdHlsZT0ic3Ryb2tlOiMwMDAwMDA7c3Ryb2tlLXdpZHRoOjEuMDsiIHdpZHRoPSI4MzAiIHg9IjE1IiB5PSI5OS4yOTY5Ii8+PHRleHQgZmlsbD0iIzAwMDAwMCIgZm9udC1mYW1pbHk9IlZlcmRhbmEiIGZvbnQtc2l6ZT0iMTMiIGZvbnQtd2VpZ2h0PSJib2xkIiBsZW5ndGhBZGp1c3Q9InNwYWNpbmciIHRleHRMZW5ndGg9Ijg0IiB4PSIzMCIgeT0iMTEyLjM2MzgiPkJ1eSAmYW1wOyB3ZWFyPC90ZXh0Pjxwb2x5Z29uIGZpbGw9IiMwMDAwMDAiIHBvaW50cz0iMzcyLDEzMy41NjI1LDM4MiwxMzcuNTYyNSwzNzIsMTQxLjU2MjUsMzc2LDEzNy41NjI1IiBzdHlsZT0ic3Ryb2tlOiMwMDAwMDA7c3Ryb2tlLXdpZHRoOjEuMDsiLz48bGluZSBzdHlsZT0ic3Ryb2tlOiMwMDAwMDA7c3Ryb2tlLXdpZHRoOjEuMDsiIHgxPSI0NCIgeDI9IjM3OCIgeTE9IjEzNy41NjI1IiB5Mj0iMTM3LjU2MjUiLz48dGV4dCBmaWxsPSIjMDAwMDAwIiBmb250LWZhbWlseT0iVmVyZGFuYSIgZm9udC1zaXplPSIxMyIgbGVuZ3RoQWRqdXN0PSJzcGFjaW5nIiB0ZXh0TGVuZ3RoPSI5MCIgeD0iNTEiIHk9IjEzMi40OTY2Ij5JIHdhbnQgYSB3YXRjaDwvdGV4dD48cG9seWdvbiBmaWxsPSIjMDAwMDAwIiBwb2ludHM9IjYyMiwxNjIuNjk1Myw2MzIsMTY2LjY5NTMsNjIyLDE3MC42OTUzLDYyNiwxNjYuNjk1MyIgc3R5bGU9InN0cm9rZTojMDAwMDAwO3N0cm9rZS13aWR0aDoxLjA7Ii8+PGxpbmUgc3R5bGU9InN0cm9rZTojMDAwMDAwO3N0cm9rZS13aWR0aDoxLjA7IiB4MT0iMzg0IiB4Mj0iNjI4IiB5MT0iMTY2LjY5NTMiIHkyPSIxNjYuNjk1MyIvPjx0ZXh0IGZpbGw9IiMwMDAwMDAiIGZvbnQtZmFtaWx5PSJWZXJkYW5hIiBmb250LXNpemU9IjEzIiBsZW5ndGhBZGp1c3Q9InNwYWNpbmciIHRleHRMZW5ndGg9IjExMiIgeD0iMzkxIiB5PSIxNjEuNjI5NCI+SGUgd2FudHMgYSB3YXRjaDwvdGV4dD48bGluZSBzdHlsZT0ic3Ryb2tlOiMwMDAwMDA7c3Ryb2tlLXdpZHRoOjEuMDsiIHgxPSI2MzQiIHgyPSI2NzYiIHkxPSIxOTUuODI4MSIgeTI9IjE5NS44MjgxIi8+PGxpbmUgc3R5bGU9InN0cm9rZTojMDAwMDAwO3N0cm9rZS13aWR0aDoxLjA7IiB4MT0iNjc2IiB4Mj0iNjc2IiB5MT0iMTk1LjgyODEiIHkyPSIyMDguODI4MSIvPjxsaW5lIHN0eWxlPSJzdHJva2U6IzAwMDAwMDtzdHJva2Utd2lkdGg6MS4wOyIgeDE9IjYzNSIgeDI9IjY3NiIgeTE9IjIwOC44MjgxIiB5Mj0iMjA4LjgyODEiLz48cG9seWdvbiBmaWxsPSIjMDAwMDAwIiBwb2ludHM9IjY0NSwyMDQuODI4MSw2MzUsMjA4LjgyODEsNjQ1LDIxMi44MjgxLDY0MSwyMDguODI4MSIgc3R5bGU9InN0cm9rZTojMDAwMDAwO3N0cm9rZS13aWR0aDoxLjA7Ii8+PHRleHQgZmlsbD0iIzAwMDAwMCIgZm9udC1mYW1pbHk9IlZlcmRhbmEiIGZvbnQtc2l6ZT0iMTMiIGxlbmd0aEFkanVzdD0ic3BhY2luZyIgdGV4dExlbmd0aD0iMTkyIiB4PSI2NDEiIHk9IjE5MC43NjIyIj5Qcm9jZXNzIG9yZGVyIGFuZCBzZW5kIHdhdGNoPC90ZXh0Pjxwb2x5Z29uIGZpbGw9IiMwMDAwMDAiIHBvaW50cz0iMzk1LDIzMy45NjA5LDM4NSwyMzcuOTYwOSwzOTUsMjQxLjk2MDksMzkxLDIzNy45NjA5IiBzdHlsZT0ic3Ryb2tlOiMwMDAwMDA7c3Ryb2tlLXdpZHRoOjEuMDsiLz48bGluZSBzdHlsZT0ic3Ryb2tlOiMwMDAwMDA7c3Ryb2tlLXdpZHRoOjEuMDsiIHgxPSIzODkiIHgyPSI2MzMiIHkxPSIyMzcuOTYwOSIgeTI9IjIzNy45NjA5Ii8+PHRleHQgZmlsbD0iIzAwMDAwMCIgZm9udC1mYW1pbHk9IlZlcmRhbmEiIGZvbnQtc2l6ZT0iMTMiIGxlbmd0aEFkanVzdD0ic3BhY2luZyIgdGV4dExlbmd0aD0iMjI2IiB4PSI0MDEiIHk9IjIzMi44OTUiPlNoZSB3aWxsIHJlY2VpdmUgdGhlIHdhdGNoIGluIDMgRGF5czwvdGV4dD48cG9seWdvbiBmaWxsPSIjMDAwMDAwIiBwb2ludHM9IjU1LDI2My4wOTM4LDQ1LDI2Ny4wOTM4LDU1LDI3MS4wOTM4LDUxLDI2Ny4wOTM4IiBzdHlsZT0ic3Ryb2tlOiMwMDAwMDA7c3Ryb2tlLXdpZHRoOjEuMDsiLz48bGluZSBzdHlsZT0ic3Ryb2tlOiMwMDAwMDA7c3Ryb2tlLXdpZHRoOjEuMDsiIHgxPSI0OSIgeDI9IjM4MyIgeTE9IjI2Ny4wOTM4IiB5Mj0iMjY3LjA5MzgiLz48dGV4dCBmaWxsPSIjMDAwMDAwIiBmb250LWZhbWlseT0iVmVyZGFuYSIgZm9udC1zaXplPSIxMyIgbGVuZ3RoQWRqdXN0PSJzcGFjaW5nIiB0ZXh0TGVuZ3RoPSIxNzgiIHg9IjYxIiB5PSIyNjIuMDI3OCI+WW91ciB3YXRjaCBhcml2ZXMgaW4gMyBEYXlzLjwvdGV4dD48cGF0aCBkPSJNMTUsMjg5LjA5MzggTDE2MCwyODkuMDkzOCBMMTYwLDI5Ni4yMjY2IEwxNTAsMzA2LjIyNjYgTDE1LDMwNi4yMjY2IEwxNSwyODkuMDkzOCAiIGZpbGw9IiNGRkZGRkYiIHN0eWxlPSJzdHJva2U6IzAwMDAwMDtzdHJva2Utd2lkdGg6MS4wOyIvPjxyZWN0IGZpbGw9Im5vbmUiIGhlaWdodD0iMjIxLjA2MjUiIHN0eWxlPSJzdHJva2U6IzAwMDAwMDtzdHJva2Utd2lkdGg6MS4wOyIgd2lkdGg9Ijg4Ny41IiB4PSIxNSIgeT0iMjg5LjA5MzgiLz48dGV4dCBmaWxsPSIjMDAwMDAwIiBmb250LWZhbWlseT0iVmVyZGFuYSIgZm9udC1zaXplPSIxMyIgZm9udC13ZWlnaHQ9ImJvbGQiIGxlbmd0aEFkanVzdD0ic3BhY2luZyIgdGV4dExlbmd0aD0iMTAwIiB4PSIzMCIgeT0iMzAyLjE2MDYiPk1pbnQgJmFtcDsgYXR0YWNoPC90ZXh0Pjxwb2x5Z29uIGZpbGw9IiMwMDAwMDAiIHBvaW50cz0iMzcyLDMyMy4zNTk0LDM4MiwzMjcuMzU5NCwzNzIsMzMxLjM1OTQsMzc2LDMyNy4zNTk0IiBzdHlsZT0ic3Ryb2tlOiMwMDAwMDA7c3Ryb2tlLXdpZHRoOjEuMDsiLz48bGluZSBzdHlsZT0ic3Ryb2tlOiMwMDAwMDA7c3Ryb2tlLXdpZHRoOjEuMDsiIHgxPSI0NCIgeDI9IjM3OCIgeTE9IjMyNy4zNTk0IiB5Mj0iMzI3LjM1OTQiLz48dGV4dCBmaWxsPSIjMDAwMDAwIiBmb250LWZhbWlseT0iVmVyZGFuYSIgZm9udC1zaXplPSIxMyIgbGVuZ3RoQWRqdXN0PSJzcGFjaW5nIiB0ZXh0TGVuZ3RoPSIyNjAiIHg9IjUxIiB5PSIzMjIuMjkzNSI+TG92ZSB0aGUgd2F0Y2gsIHdhbm5hIGFkZCBhIGRpZ2l0YWwgSXRlbTwvdGV4dD48cG9seWdvbiBmaWxsPSIjMDAwMDAwIiBwb2ludHM9IjU1LDM1Mi40OTIyLDQ1LDM1Ni40OTIyLDU1LDM2MC40OTIyLDUxLDM1Ni40OTIyIiBzdHlsZT0ic3Ryb2tlOiMwMDAwMDA7c3Ryb2tlLXdpZHRoOjEuMDsiLz48bGluZSBzdHlsZT0ic3Ryb2tlOiMwMDAwMDA7c3Ryb2tlLXdpZHRoOjEuMDsiIHgxPSI0OSIgeDI9IjM4MyIgeTE9IjM1Ni40OTIyIiB5Mj0iMzU2LjQ5MjIiLz48dGV4dCBmaWxsPSIjMDAwMDAwIiBmb250LWZhbWlseT0iVmVyZGFuYSIgZm9udC1zaXplPSIxMyIgbGVuZ3RoQWRqdXN0PSJzcGFjaW5nIiB0ZXh0TGVuZ3RoPSIyMjkiIHg9IjYxIiB5PSIzNTEuNDI2MyI+U3VyZSwgSSByZWNvbW1lbmQgRmlyZS4gRmlyZSBpcyBjb29sLjwvdGV4dD48cG9seWdvbiBmaWxsPSIjMDAwMDAwIiBwb2ludHM9IjM3MiwzODEuNjI1LDM4MiwzODUuNjI1LDM3MiwzODkuNjI1LDM3NiwzODUuNjI1IiBzdHlsZT0ic3Ryb2tlOiMwMDAwMDA7c3Ryb2tlLXdpZHRoOjEuMDsiLz48bGluZSBzdHlsZT0ic3Ryb2tlOiMwMDAwMDA7c3Ryb2tlLXdpZHRoOjEuMDsiIHgxPSI0NCIgeDI9IjM3OCIgeTE9IjM4NS42MjUiIHkyPSIzODUuNjI1Ii8+PHRleHQgZmlsbD0iIzAwMDAwMCIgZm9udC1mYW1pbHk9IlZlcmRhbmEiIGZvbnQtc2l6ZT0iMTMiIGxlbmd0aEFkanVzdD0ic3BhY2luZyIgdGV4dExlbmd0aD0iMTcwIiB4PSI1MSIgeT0iMzgwLjU1OTEiPlNvdW5kcyBncmVhdC4gSSBtaW50IGEgZmlyZS48L3RleHQ+PHBvbHlnb24gZmlsbD0iIzAwMDAwMCIgcG9pbnRzPSI4MjgsNDEwLjc1NzgsODM4LDQxNC43NTc4LDgyOCw0MTguNzU3OCw4MzIsNDE0Ljc1NzgiIHN0eWxlPSJzdHJva2U6IzAwMDAwMDtzdHJva2Utd2lkdGg6MS4wOyIvPjxsaW5lIHN0eWxlPSJzdHJva2U6IzAwMDAwMDtzdHJva2Utd2lkdGg6MS4wOyIgeDE9IjM4NCIgeDI9IjgzNCIgeTE9IjQxNC43NTc4IiB5Mj0iNDE0Ljc1NzgiLz48dGV4dCBmaWxsPSIjMDAwMDAwIiBmb250LWZhbWlseT0iVmVyZGFuYSIgZm9udC1zaXplPSIxMyIgbGVuZ3RoQWRqdXN0PSJzcGFjaW5nIiB0ZXh0TGVuZ3RoPSIxMDIiIHg9IjM5MSIgeT0iNDA5LjY5MTkiPlNoZSB3YW50cyBhIGZpcmU8L3RleHQ+PHBvbHlnb24gZmlsbD0iIzAwMDAwMCIgcG9pbnRzPSI1NSw0MzkuODkwNiw0NSw0NDMuODkwNiw1NSw0NDcuODkwNiw1MSw0NDMuODkwNiIgc3R5bGU9InN0cm9rZTojMDAwMDAwO3N0cm9rZS13aWR0aDoxLjA7Ii8+PGxpbmUgc3R5bGU9InN0cm9rZTojMDAwMDAwO3N0cm9rZS13aWR0aDoxLjA7IiB4MT0iNDkiIHgyPSI4MzkiIHkxPSI0NDMuODkwNiIgeTI9IjQ0My44OTA2Ii8+PHRleHQgZmlsbD0iIzAwMDAwMCIgZm9udC1mYW1pbHk9IlZlcmRhbmEiIGZvbnQtc2l6ZT0iMTMiIGxlbmd0aEFkanVzdD0ic3BhY2luZyIgdGV4dExlbmd0aD0iMjIyIiB4PSI2MSIgeT0iNDM4LjgyNDciPllvdSBhcmUgdGhlIG93bmVyIG9mIEZpcmUsIGNvbmdyYXRzPC90ZXh0Pjxwb2x5Z29uIGZpbGw9IiMwMDAwMDAiIHBvaW50cz0iMzcyLDQ2OS4wMjM0LDM4Miw0NzMuMDIzNCwzNzIsNDc3LjAyMzQsMzc2LDQ3My4wMjM0IiBzdHlsZT0ic3Ryb2tlOiMwMDAwMDA7c3Ryb2tlLXdpZHRoOjEuMDsiLz48bGluZSBzdHlsZT0ic3Ryb2tlOiMwMDAwMDA7c3Ryb2tlLXdpZHRoOjEuMDsiIHgxPSI0NCIgeDI9IjM3OCIgeTE9IjQ3My4wMjM0IiB5Mj0iNDczLjAyMzQiLz48dGV4dCBmaWxsPSIjMDAwMDAwIiBmb250LWZhbWlseT0iVmVyZGFuYSIgZm9udC1zaXplPSIxMyIgbGVuZ3RoQWRqdXN0PSJzcGFjaW5nIiB0ZXh0TGVuZ3RoPSIxNDMiIHg9IjUxIiB5PSI0NjcuOTU3NSI+SXMgaXQgbm93IG9uIG15IHdhdGNoPzwvdGV4dD48cG9seWdvbiBmaWxsPSIjMDAwMDAwIiBwb2ludHM9IjU1LDQ5OC4xNTYzLDQ1LDUwMi4xNTYzLDU1LDUwNi4xNTYzLDUxLDUwMi4xNTYzIiBzdHlsZT0ic3Ryb2tlOiMwMDAwMDA7c3Ryb2tlLXdpZHRoOjEuMDsiLz48bGluZSBzdHlsZT0ic3Ryb2tlOiMwMDAwMDA7c3Ryb2tlLXdpZHRoOjEuMDsiIHgxPSI0OSIgeDI9IjM4MyIgeTE9IjUwMi4xNTYzIiB5Mj0iNTAyLjE1NjMiLz48dGV4dCBmaWxsPSIjMDAwMDAwIiBmb250LWZhbWlseT0iVmVyZGFuYSIgZm9udC1zaXplPSIxMyIgbGVuZ3RoQWRqdXN0PSJzcGFjaW5nIiB0ZXh0TGVuZ3RoPSIxOTkiIHg9IjYxIiB5PSI0OTcuMDkwMyI+WWVzIGZpcmUsIGlzIGF0dGFjaCB0byB5b3VyIHdhdGNoPC90ZXh0PjxwYXRoIGQ9Ik0xNSw1MjQuMTU2MyBMMTg0LDUyNC4xNTYzIEwxODQsNTMxLjI4OTEgTDE3NCw1NDEuMjg5MSBMMTUsNTQxLjI4OTEgTDE1LDUyNC4xNTYzICIgZmlsbD0iI0ZGRkZGRiIgc3R5bGU9InN0cm9rZTojMDAwMDAwO3N0cm9rZS13aWR0aDoxLjA7Ii8+PHJlY3QgZmlsbD0ibm9uZSIgaGVpZ2h0PSIxMTcuNTMxMyIgc3R5bGU9InN0cm9rZTojMDAwMDAwO3N0cm9rZS13aWR0aDoxLjA7IiB3aWR0aD0iNDExIiB4PSIxNSIgeT0iNTI0LjE1NjMiLz48dGV4dCBmaWxsPSIjMDAwMDAwIiBmb250LWZhbWlseT0iVmVyZGFuYSIgZm9udC1zaXplPSIxMyIgZm9udC13ZWlnaHQ9ImJvbGQiIGxlbmd0aEFkanVzdD0ic3BhY2luZyIgdGV4dExlbmd0aD0iMTI0IiB4PSIzMCIgeT0iNTM3LjIyMzEiPlNob3cgb2ZmICZhbXA7IHNob3c8L3RleHQ+PHBvbHlnb24gZmlsbD0iIzAwMDAwMCIgcG9pbnRzPSIzNzIsNTU4LjQyMTksMzgyLDU2Mi40MjE5LDM3Miw1NjYuNDIxOSwzNzYsNTYyLjQyMTkiIHN0eWxlPSJzdHJva2U6IzAwMDAwMDtzdHJva2Utd2lkdGg6MS4wOyIvPjxsaW5lIHN0eWxlPSJzdHJva2U6IzAwMDAwMDtzdHJva2Utd2lkdGg6MS4wOyIgeDE9IjQ0IiB4Mj0iMzc4IiB5MT0iNTYyLjQyMTkiIHkyPSI1NjIuNDIxOSIvPjx0ZXh0IGZpbGw9IiMwMDAwMDAiIGZvbnQtZmFtaWx5PSJWZXJkYW5hIiBmb250LXNpemU9IjEzIiBsZW5ndGhBZGp1c3Q9InNwYWNpbmciIHRleHRMZW5ndGg9IjEwNCIgeD0iNTEiIHk9IjU1Ny4zNTYiPkkgd2FubmEgc2hvdyBvZmY8L3RleHQ+PHBvbHlnb24gZmlsbD0iIzAwMDAwMCIgcG9pbnRzPSI1NSw1ODcuNTU0Nyw0NSw1OTEuNTU0Nyw1NSw1OTUuNTU0Nyw1MSw1OTEuNTU0NyIgc3R5bGU9InN0cm9rZTojMDAwMDAwO3N0cm9rZS13aWR0aDoxLjA7Ii8+PGxpbmUgc3R5bGU9InN0cm9rZTojMDAwMDAwO3N0cm9rZS13aWR0aDoxLjA7IiB4MT0iNDkiIHgyPSIzODMiIHkxPSI1OTEuNTU0NyIgeTI9IjU5MS41NTQ3Ii8+PHRleHQgZmlsbD0iIzAwMDAwMCIgZm9udC1mYW1pbHk9IlZlcmRhbmEiIGZvbnQtc2l6ZT0iMTMiIGxlbmd0aEFkanVzdD0ic3BhY2luZyIgdGV4dExlbmd0aD0iMjA4IiB4PSI2MSIgeT0iNTg2LjQ4ODgiPlN1cmUsIGp1c3QgaG92ZXIgb3ZlciB5b3VyIFdhdGNoPC90ZXh0PjxsaW5lIHN0eWxlPSJzdHJva2U6IzAwMDAwMDtzdHJva2Utd2lkdGg6MS4wOyIgeDE9IjQ0IiB4Mj0iODYiIHkxPSI2MjAuNjg3NSIgeTI9IjYyMC42ODc1Ii8+PGxpbmUgc3R5bGU9InN0cm9rZTojMDAwMDAwO3N0cm9rZS13aWR0aDoxLjA7IiB4MT0iODYiIHgyPSI4NiIgeTE9IjYyMC42ODc1IiB5Mj0iNjMzLjY4NzUiLz48bGluZSBzdHlsZT0ic3Ryb2tlOiMwMDAwMDA7c3Ryb2tlLXdpZHRoOjEuMDsiIHgxPSI0NSIgeDI9Ijg2IiB5MT0iNjMzLjY4NzUiIHkyPSI2MzMuNjg3NSIvPjxwb2x5Z29uIGZpbGw9IiMwMDAwMDAiIHBvaW50cz0iNTUsNjI5LjY4NzUsNDUsNjMzLjY4NzUsNTUsNjM3LjY4NzUsNTEsNjMzLjY4NzUiIHN0eWxlPSJzdHJva2U6IzAwMDAwMDtzdHJva2Utd2lkdGg6MS4wOyIvPjx0ZXh0IGZpbGw9IiMwMDAwMDAiIGZvbnQtZmFtaWx5PSJWZXJkYW5hIiBmb250LXNpemU9IjEzIiBsZW5ndGhBZGp1c3Q9InNwYWNpbmciIHRleHRMZW5ndGg9IjMyNiIgeD0iNTEiIHk9IjYxNS42MjE2Ij5Xb3csIGxvdmUgaXQsIEZyaWVuZG9vIGhvdmVyIG92ZXIgaXQsIHRoYXRzIGFtYXppbmchPC90ZXh0PjwvZz48L3N2Zz4=" alt="" /></p>
+<p>The Sequence Diagram shows, how things are move. See it as a conversation. Don't try to be perfectionist. The whole point of sketching is to give the Idea a shape, not more and nothing less.</p>
+<hr />
+<p>Great. Now <code>wearo.xyz</code> has a shape. Lets summarize quickly what we wanna do.</p>
+<p>I'm Frank. I create <code>wearo.xyz</code>. A place to buy watches. Iron Man watches.</p>
+<p>Don't overthink, just move on.</p>
+<p>Next up paint 🎨</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="-paint"><a class="header" href="#-paint">🎨 Paint</a></h1>
+<p>The Section <code>Paint</code> deals with making the first step.</p>
+<p>In classical crypto fashion, we start with the Smart Contracts.</p>
+<p>An other option would to use Figma and paint a rectacle.<br />
+An other option would to use Javascript and paint a button.<br />
+An other option would to use NodeJS paint one get request.<br />
+An other option would to use Blender and paint your first vertice.<br />
+An other option would to use Krita and paint your first stroke.<br />
+An other option would to use Excel and paint your first column.<br />
+An other ... I could go on hours with. Anyways lets start.</p>
+<h2 id="build"><a class="header" href="#build">Build</a></h2>
+<ol>
+<li>Setup up ink</li>
+<li>Initialise a contract <code>cargo contract new wearo</code><br />
+2.1. (optional) first commit<br />
+<code>git init &amp;&amp; git branch -m master main &amp;&amp; git add . &amp;&amp; git commit -m ":zap: (contracts) here we go"</code></li>
+<li>Delete the Boilerplate</li>
+<li>Add your first variable</li>
+<li>Add your first function</li>
+</ol>
+<h2 id="compile"><a class="header" href="#compile">Compile</a></h2>
+<ol start="6">
+<li>Build your little flower <code>cargo contract build</code></li>
+<li>Fix bugs, if it doesn't want to get shredded into binary.</li>
+<li>And again, <code>cargo contract build</code>, great.</li>
+</ol>
+<h2 id="call"><a class="header" href="#call">Call</a></h2>
+<ol start="7">
+<li>Spin up a node<br />
+<code>substrate-contracts-node --dev</code></li>
+<li>Deploy your contract<br />
+<code>cargo contract instantiate --suri //Alice --execute</code></li>
+<li>Call your getter<br />
+<code>cargo contract call --contract &lt;address&gt; --call get_digital_asset --suri //Alice</code></li>
+<li>Call your setter<br />
+<code>cargo contract call --contract &lt;address&gt; --call change_digital_assets --message "ipfs.io/ipfs/0fwoooGREAToooIPFSoooHASHooorouip" --suri //Alice --execute</code></li>
+<li>Call your getter<br />
+<code>cargo contract call --contract &lt;address&gt; --call get_digital_asset --suri //Alice</code></li>
+<li>DONE<br />
+12.1 (optional) commit it<br />
+<code>git add . &amp;&amp; git commit -m ":rocket: (contracts) gotcha!"</code></li>
+</ol>
+<p><strong>Nice. That's it.</strong></p>
+<p>For the people who love videos. Here a quick rundown.</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/M0k_jhmFYoo?si=TV5sD-6kNVULx8vI" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<p>We covered the following:</p>
+<ul>
+<li>How to think about of generating Ideas</li>
+<li>How to sketch an Idea into an Shape</li>
+<li>How to paint your first step.</li>
+</ul>
+<p>I will conclude our doings in the next section.
+Its less informative, more lyrical. Its writing for the sake of writing itself. Feel free to call it a day and thanks a lot for going through my little book. I appreciate it a lot.</p>
+<p>Next up. Conclusion.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="outro"><a class="header" href="#outro">Outro</a></h1>
+<p>The Section <code>Outro</code> deals with the why.</p>
+<p>Why in regards of, why I believe this tiny content is from use.<br />
+If it wouldn't I wouldn't write it.</p>
+<p>The <code>Think</code> Section is kind of a mental model that I made my own.</p>
+<ul>
+<li>First of all, its a blast of fun to brainstorm and throw everything around.
+Who doesn't like that. Escpecially with others.</li>
+<li>Second, mass counts. Having 30 Ideas on your selve instead of 3 served me
+really well. Can recommend.</li>
+<li>Third, its a good analytic tool. Instead of asking what, asking what's not,
+can catch some smelly fish in the water. In our case, I can name of whats
+wearo.xyz is not, 9 times. Could be 0.</li>
+<li>Lastly, god damnit, it takes 10 minutes. It doesn't have to be 100 Words,
+do 10. Make 3 sentences and run with it. I get nuts, when people overanalyze
+without not line of code is written or one rectangle is made or one ... .
+Otherwise to not give it a breath and explore options is not clever either.</li>
+</ul>
+<p>The <code>Scratch</code> Section is my favorite. Take giant things and chop them down.</p>
+<ul>
+<li>First, its a nice framework to work in it. It covers a lot what is necessary
+to think through and in the end you can see, what is a sweet first step.</li>
+<li>Second, its a live safer for communication.</li>
+</ul>
+<p>The <code>Paint</code> Section is just the beginning.</p>
+<ul>
+<li>First, the underlying message was. Keep it stupid simple.</li>
+<li>Second, building is hard. Making a step requires already a mountain of
+knowledge and skills. Getting something running is a masterpiece of its own.
+It counts.</li>
+<li>Third, leaving the proud and trying to be clever behind is not easy. Tiny
+little steps is not seen as glorious. But thats how we walk forward. One step
+after another.</li>
+<li>Lastly, Iterate. Don't hesitate to throw everything in the bin and do it
+again. Running without big thoughts has the benefits, if you crash a wall. You
+know there is a wall. Even the smartest chad, can't look around corners.</li>
+</ul>
+<p>Overall, all three Section share one thing in common. <strong>Speed</strong> .<br />
+This stuff takes an hour for me. It's an hour. I saw many people spending days in
+brainstorming or structuring their Ideas or even weeks &amp; months to make just one
+tiny step.</p>
+<blockquote>
+<p>One of my favorite memories is my first Hackathon. It was an VR Hackathon. I
+just dived into coding. Unity, a game engine. My goal was a to build a
+prototype. I spendt two months++ try to get something. I was patient, like
+always but I struggled and it was tsunami of information. Fun, but yikes, not
+cool. Then I participated on this thing called Hackathon. I pitched what I
+wanna do, asked for teammates and one cool dude joined me. We tried our best.
+In the first night a completely energized guy hopped by, walked around and saw
+what was going up. After an hour he decided he will join us. This guy name was
+Adam. Adam thought, sketched and painted this thing in 3 days with 3 times
+more features. Had solution of Problems that i never thought of. This experience
+stuck to me. Speed is just inspiring. Little side story regarding to speed.</p>
+</blockquote>
+<p><strong>Are these Lessons new?</strong><br />
+Nah, most likely not. Just another digestion of a human fellow and his
+conclusion after consuming and experience things.</p>
+<p>I hope you a fun in reading and maybe you catch some nice tricks for your
+personal your toolbelt. Now 15 minutes are over. Your coffee is half empty and
+maybe need small refill. So, go get it!</p>
+<p><strong>Cheers Frank</strong> 🌤️</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="elasticlunr.min.js"></script>
+        <script src="mark.min.js"></script>
+        <script src="searcher.js"></script>
+
+        <script src="clipboard.min.js"></script>
+        <script src="highlight.js"></script>
+        <script src="book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+        <script>
+        window.addEventListener('load', function() {
+            window.setTimeout(window.print, 100);
+        });
+        </script>
+
+    </div>
+    </body>
+</html>
