@@ -1,46 +1,57 @@
 # 09 - Ideas
 
+- [Youtube](https://drive.google.com/file/d/1RiCojSxIw2D0MUfezzvxQITH-2ImwUHg/view?usp=sharing)
+- [Github - PDF](https://github.com/FrankBevr/100-Ideas/blob/main/practice/00/00-Ideas.pdf)
+- [Github - Code](https://github.com/FrankBevr/100-Ideas/blob/main/practice/00/animalo/lib.rs)
+
+<hr style="page-break-after: always;"/>
+
 ## Overview
 
 - Intro
 - Think
-    - 100 Words
-    - 10 Sentences
-    - Rate & Select
+  - [x] 100 Words
+  - [x] 10 Sentences
+  - [x] Rate & Select
 - Sketch
-    - Idea
-    - Requirments
-    - Stories
-    - Diagrams
+  - [x] Idea
+  - [x] Requirements
+  - [x] Stories
+  - [x] Diagrams
 - Paint
-    - Write
-    - Build
-    - Test
-    
+  - [x] Write
+  - [x] Build
+  - [x] Test
+
+<hr style="page-break-after: always;"/>
+
 ## :brain: Think
 
 ### 100 Words
 
-- Rich pictures
+- Note: Create Rich Pictures. That's it.
 
-Earings, Shirt, Chair, Microphon, Technican
-Phala, Computiation, Finance, Offchain, Polygon
-Mandala, Nightshift, Google Meet, Starbucks, Fanta,
-Swiss, Berry, Communication, Thailand, TukTuk, 
-
+| Words   |              |               |           |           |
+| :------ | :----------- | :------------ | :-------- | :-------- |
+| Earings | Shirt        | Chair         | Microphon | Technican |
+| Phala   | Computiation | Finance       | Offchain  | Polygon   |
+| Mandala | Nightshift   | Google Meet   | Starbucks | Fanta     |
+| Swiss   | Berry        | Communication | Thailand  | TukTuk    |
 
 ### 10 Sentences
 
-| Theme | Word | Phrase | Rating| 
-|:-|:-|:-|:-|
-| Marketing | Berry | Your animals of exelcene | 5|
-| Right Items | Fanta | Right items on the go |6|
-| Computiation | Blender | Mint on the fly | 5|
-| Call out | Microphon | You cards on the spot | 2|
+| Theme        | Word      | Phrase                   | Rating |
+| :----------- | :-------- | :----------------------- | :----- |
+| Marketing    | Berry     | Your animals of exelcene | 5      |
+| Right Items  | Fanta     | Right items on the go    | 6      |
+| Computiation | Blender   | Mint on the fly          | 5      |
+| Call out     | Microphon | You cards on the spot    | 2      |
 
 ### Rate & Select
 
 The winner is `animo.xyz`
+
+<hr style="page-break-after: always;"/>
 
 ## :pencil: Sketch
 
@@ -52,22 +63,24 @@ The winner is `animo.xyz`
 
 ### Requirements
 
-**Functional Requirments**
+**Functional Requirements**
+
 - The App must connect to Instagrams
 - The App must show a selection of prominent animals
 - The Owner must be ablet to tokenize the rewards
 
-**No Functional Requirmetns**
-- The App must take care of the animal automaticall
+**No Functional Requirements**
+
+- The App must take care of the animal automatically
 
 ### User Stories
 
 - As a User I want to earn money
-- As a User I want to share my animal sucess
+- As a User I want to share my animal success
 - As a User I want to I want to market my product
 
-> Currently creates a animal rewards system. 
-> I bet my ass off that exist in the web2 way and uses a centralized entity.
+> Currently creates a animal rewards system.
+> I bet my ass off that exist in the Web 2 way and uses a centralized entity.
 
 ### Diagram
 
@@ -80,11 +93,12 @@ User -- (share)
 User -- (market)
 
 ```
+
 </br>
 
 ```plantuml
 !theme plain
-title Class Diagramm
+title Class Diagram
 
 class Animalo{
     +animal: String
@@ -100,15 +114,15 @@ class Animalo{
 !theme plain
 title Sequence Diagram
 
-actor User 
+actor User
 actor MarketingAgency
 entity WebApp
 database SmartContract
 
 group register
 User -> WebApp: register berry
-WebApp -> SmartContract: new animal is comming
-WebApp -> User: berry is on 
+WebApp -> SmartContract: new animal is coming
+WebApp -> User: berry is on
 end
 
 group hiring
@@ -127,7 +141,9 @@ group Does the thing
 User -> User: does marketing
 SmartContract -> User: here your money
 end
-``` 
+```
+
+<hr style="page-break-after: always;"/>
 
 ## :art: Paint
 
@@ -176,9 +192,3 @@ mod animalo {
 }
 
 ```
-
-
-
-
-
-
