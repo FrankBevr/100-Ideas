@@ -10,21 +10,24 @@
 ## Overview
 ### :wave: Intro 
 - [x] I'm Frank.
+
 ### :brain: Think
 - [x] Words 
 - [x] Sentences 
 - [x] Ideas
 - [x] Rate Ideas
 - [x] Select Idea
+
 ### :pencil: Sketch
 - [x] Structure Idea (Design)
    - [x] Ideas (Problem/Solution)
-   - [x] Requirments (Functional / NonFunctional)
+   - [x] Requirements (Functional / NonFunctional)
    - [x] Stories
    - [x] Diagrams
        - [x] UseCase (What)
        - [x] Class (Data)
        - [x] Sequence (Behaviour)
+
 ### :art: Paint
 - [x] First Draft
     - [x] `cargo contract new my_new_idea`
@@ -32,6 +35,7 @@
     - [x] `substrate-contracts-node --dev`
     - [x] `cargo contract deploy`
     - [x] `cargo contract call`
+
 ### :wave: Outro
 
 - [x] **What we did:** Think, Sketch, Paint  
@@ -71,17 +75,17 @@
 | City Funding              | 3/10   | As a City citizen I want to be able to fund projects in my city                                      |
 | Data Distrubiton          | 4/10   | As a User I want to distrubte Data without loosing ownership                                         |
 | Health Safe               | 6/10   | As a Doctor I want to have access to my Patients Healt Data                                          |
-| Encyclopdia unstoppable   | 4/10   | As a Human I want to be access to none censored data                                                 |
+| Encyclopedia unstoppable   | 4/10   | As a Human I want to be access to none censored data                                                 |
 | State Creator             | 8/10   | As a User I want to create my own empire.                                                            |
-| My Color                  | 4/10   | As a User I want to have access to the lastest color trends                                          |
+| My Color                  | 4/10   | As a User I want to have access to the latest color trends                                          |
 | Fashion Collector         | 2/10   | As a User I want to collect the latest Fashions Trends                                               |
 | Music Distrubter          | 3/10   | As a Artist I want to distrubte my Music in a fair manner                                            |
-| Elements Collector        | 8/10   | As a Scientist I want to learn about elements and have a proove that I know things                   |
+| Elements Collector        | 8/10   | As a Scientist I want to learn about elements and have a prove that I know things                   |
 | Weather Forecast          | 3/10   | As a Weather Scientist I want to share my forecast with the world without loosing my credentials     |
 | Plastic Certificate       | 4/10   | As a Manufacture I want to certificate my new plastics                                               |
 | Organic Snippet Collector | 8/10   | As a Biologist I want to share DNA Snippets annomyously without taking full ownership about the Data |
 | Supply Chain Tracker      | 2/10   | As a Manufacatore I want to have a proof that my supply chain is child labor free                    |
-| Animation Libary          | 4/10   | As a Animator I want to share my unique animation key frames with the world                          |
+| Animation Library          | 4/10   | As a Animator I want to share my unique animation key frames with the world                          |
 
 :::success
 Selected Idea:  
@@ -102,16 +106,16 @@ Its hard to create your own State
 #### Solution
 `statecreator.xyz`
 
-### Requirments
+### Requirements
 
-#### Functional Requirments
+#### Functional Requirements
 
 - The App must do add citizens
 - The App must allow elections
 - The App must allow to buy land
 - The App must allow festivals
 
-#### NonFunctional Requirments
+#### NonFunctional Requirements
 
 - The App must be able easy to use
 - The App must be open source
